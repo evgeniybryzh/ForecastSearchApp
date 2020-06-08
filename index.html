@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Forecats Weather Tool</title>
+  </head>
+  <body>
+    <section class="forecast">
+      <video class="forecast__video" autoplay muted loop id="video">
+        <source id="video-source" src="images/Clouds.mp4" type="video/mp4" />
+      </video>
+      <header class="header forecast__header">
+        <div class="container header__container">
+          <div class="icon header__icon-box">
+            <div class="sun"></div>
+            <div class="cloud">
+              <div class="cloud1">
+                <ul>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </div>
+              <div class="cloud1 c_shadow">
+                <ul>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="cloud_s">
+              <div class="cloud1">
+                <ul>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </div>
+              <div class="cloud1 c_shadow">
+                <ul>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="cloud_vs">
+              <div class="cloud1">
+                <ul>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </div>
+              <div class="cloud1 c_shadow">
+                <ul>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="thunder"></div>
+            <div class="rain">
+              <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+            <div class="sleet">
+              <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+
+          <h1 class="header__title">Forecast Weather Tool</h1>
+          <div class="header__search-box search-box">
+            <input
+              id="input"
+              placeholder="City name"
+              type="text"
+              class="search-box__input"
+            />
+            <div id="button" class="search-box__icon-wrapper">
+              <img
+                id="search-icon"
+                src="images/search.png"
+                alt="search-icon"
+                class="search-box__icon"
+              />
+            </div>
+          </div>
+          <div class="hearder__burger-wrapper">
+            <div id="burger" class="header__burger burger">
+              <div id="first-stripe" class="burger__item"></div>
+              <div id="second-stripe" class="burger__item"></div>
+              <div id="third-stripe" class="burger__item"></div>
+              <div id="burger-menu" class="burger__menu">
+                <h2 class="burger__menu-title">
+                  Choose your favourite kind of weather:
+                </h2>
+                <ul id="menu-list" class="burger__menu-list">
+                  <li id="sunny" class="burger__menu-items">
+                    Sunny
+                  </li>
+                  <li id="rainy" class="burger__menu-items">Rainy</li>
+                  <li id="foggy" class="burger__menu-items">Foggy</li>
+                  <li id="thunder" class="burger__menu-items">
+                    Cloudy
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div id="cards" class="forecast__cards cards container">
+        <div id="cards-map" class="cards__map map"></div>
+        <div id="cards-info" class="cards__info info">
+          <div id="info-details" class="info__details"></div>
+          <h2 id="info-title" class="info__title">Daily Forecast</h2>
+          <div class="info__daily-info"></div>
+          <div class="info__daily-info"></div>
+          <div class="info__daily-info"></div>
+          <div class="info__daily-info"></div>
+          <div class="info__daily-info"></div>
+        </div>
+      </div>
+    </section>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
