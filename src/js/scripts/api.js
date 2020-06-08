@@ -2,8 +2,8 @@
 
 export function getResponse() {
   const API_KEY = "d6e7fd6926ec77363ffce0e10bfe83b3";
-  const BASE_URL = `http://api.openweathermap.org/data/2.5/weather?q=`;
-  const SECONDARY_URL = `http://api.openweathermap.org/data/2.5/forecast?q=`;
+  const BASE_URL = `https://api.openweathermap.org/data/2.5/weather?q=`;
+  const SECONDARY_URL = `https://api.openweathermap.org/data/2.5/forecast?q=`;
 
   const $cards = document.getElementById("cards");
   const $cardsInfo = document.getElementById("cards-info");
