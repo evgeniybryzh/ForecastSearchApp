@@ -1,0 +1,18 @@
+// Fonts
+// @import url("");
+// Core
+@import "./core/vars";
+@import "./core/inheritance";
+@import "./core/mixins";
+@import "./core/common";
+
+// components-->common
+@import "./src/css/components/common/sun-icon";
+@import "./src/css/components/common/burger";
+@import "./src/css/components/common/search-box";
+@import "./src/css/components/common/info";
+// Components
+@import "./src/css/components/header";
+@import "./src/css/components/footer";
+@import "./src/css/components/forecast";
+@import "./src/css/components/cards";

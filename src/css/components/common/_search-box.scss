@@ -1,0 +1,34 @@
+.search-box {
+  @include flex-main(row, flex-start, center);
+  margin-right: 80px;
+
+  &__input {
+    flex-basis: 80%;
+    height: 80px;
+    @include font($main-font, 40px, 500, $dark);
+    border: 1px solid $grey;
+    border-radius: 10px 0 0 10px;
+    padding-left: 10px;
+    &::placeholder {
+      @include font($secondary-font, 30px, 300, $grey);
+      text-align: center;
+    }
+  }
+  &__icon-wrapper {
+    width: 80px;
+    height: 80px;
+    @include flex-main;
+    background-color: $icon-color;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    transition: 0.2s linear all;
+    &:hover {
+      background-color: $icon-hover-color;
+    }
+  }
+  &__icon {
+    width: 50px;
+    height: 50px;
+    margin-left: 5px;
+  }
+}

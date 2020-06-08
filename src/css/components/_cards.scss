@@ -1,0 +1,15 @@
+.cards {
+  width: 100%;
+  @include flex-main(row, space-between, center);
+
+  &__map {
+    flex-basis: 49%;
+    height: 700px;
+    background-color: rgba(245, 245, 245, 0.4);
+  }
+  &__info {
+    flex-basis: 49%;
+    height: 700px;
+    background-color: rgba(245, 245, 245, 0.4);
+  }
+}

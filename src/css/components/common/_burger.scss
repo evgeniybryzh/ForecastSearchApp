@@ -1,0 +1,61 @@
+.burger {
+  width: 40px;
+  height: 25px;
+  position: relative;
+  cursor: pointer;
+  &__item:nth-child(1) {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+  }
+
+  &__item:nth-child(2) {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+  }
+  &__item:nth-child(3) {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+  }
+  &__menu {
+    width: 600px;
+    height: 100px;
+    @include flex-main(column, center, center);
+    border: 2px solid $dark;
+    border-radius: 20px;
+    background-color: rgba(245, 245, 245, 0.8);
+    position: absolute;
+    display: none;
+    right: 40px;
+    top: -40px;
+  }
+  &__menu-title {
+    @include font($main-font, 35px, 400, $dark);
+  }
+  &__menu-list {
+    width: 100%;
+    @include flex-main(row, space-around, center);
+    @include font($main-font, 25px, 400, $dark);
+  }
+  &__menu-items {
+    border: 1px solid $dark;
+    padding: 5px;
+    cursor: pointer;
+    transition: 0.2s linear all;
+    &:hover {
+      background-color: $icon-color;
+    }
+  }
+}
+.pushed {
+  transition: 0.2s ease all;
+  transform: rotate(25deg);
+}

@@ -1,0 +1,31 @@
+.info {
+  @include flex-main(column, flex-start, center);
+  border-radius: 20px 20px 0 0;
+  z-index: -1;
+
+  &__details {
+    border-radius: 20px 20px 0 0;
+    width: 100%;
+    flex-basis: 30%;
+    margin-bottom: 15px;
+    background-image: linear-gradient($cover-top, $cover-bottom),
+      url("https://demo.phpmeteo.com/themes/weather/assets/images/weather/01.jpg");
+    overflow: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+  }
+  &__title {
+    width: 95%;
+    flex-basis: 5%;
+    @include font($main-font, 35px, 400, $dark);
+    margin-bottom: 15px;
+  }
+  &__daily-info {
+    width: 95%;
+    flex-basis: 15%;
+    margin-bottom: 10px;
+    background-color: rgba(245, 245, 245, 0.1);
+  }
+}
