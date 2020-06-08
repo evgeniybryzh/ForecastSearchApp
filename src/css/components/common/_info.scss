@@ -6,7 +6,7 @@
   &__details {
     border-radius: 20px 20px 0 0;
     width: 100%;
-    flex-basis: 30%;
+    flex-basis: 35%;
     margin-bottom: 15px;
     background-image: linear-gradient($cover-top, $cover-bottom),
       url("https://demo.phpmeteo.com/themes/weather/assets/images/weather/01.jpg");
@@ -14,7 +14,55 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 0;
+    padding: 10px;
+    @include flex-main(column, space-between, center);
+    overflow: hidden;
+    position: relative;
+  }
+  &__title-box {
+    width: 100%;
+    flex-basis: 50%;
+  }
+  &__weather-details {
+    @include flex-main(row, space-between, center);
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+  &__temperature-box {
+    @include flex-main(row, flex-start, center);
+    flex-basis: 33.3%;
+  }
+
+  &__weather-box {
+    @include flex-main(row, space-between, center);
+    flex-wrap: wrap;
+    flex-basis: 66.6%;
+  }
+  &__values {
+    flex-basis: 50%;
+    @include flex-main(row, flex-start, center);
+    padding: 5px;
+  }
+  &__name {
+    @include font($secondary-font, 25px, 500, $white);
+  }
+  &__main-title {
+    @include font($main-font, 35px, 500, $white);
+  }
+  &__temperature {
+    @include font($secondary-font, 80px, 500, $white);
+  }
+  &__weather-icon {
+    margin-right: 10px;
+    width: 25px;
+    height: 25px;
+  }
+  &__big-weather-icon {
+    width: 88px;
+    height: 90px;
+  }
+  &__weather-kind {
+    @include font($secondary-font, 20px, 600, $white);
   }
   &__title {
     width: 95%;
@@ -22,10 +70,50 @@
     @include font($main-font, 35px, 400, $dark);
     margin-bottom: 15px;
   }
-  &__daily-info {
+  &__hourly-info-box {
     width: 95%;
-    flex-basis: 15%;
+    flex-basis: 80%;
+    @include flex-main(column, space-between, center);
+  }
+  &__hourly-info {
+    width: 100%;
+    flex-basis: 20%;
     margin-bottom: 10px;
-    background-color: rgba(245, 245, 245, 0.1);
+    background-color: rgba(245, 245, 245, 0.3);
+    @include flex-main(row, space-between, center);
+    padding: 5px 15px 5px 15px;
+  }
+  &__date {
+    flex-basis: 15%;
+  }
+  &__hourly-weather-box {
+    flex-basis: 70%;
+    @include flex-main(row, space-between, center);
+    flex-wrap: wrap;
+  }
+  &__hourly-temperature-box {
+    flex-basis: 15%;
+    @include flex-main;
+  }
+  &__hourly-values {
+    flex-basis: 50%;
+    @include flex-main(row, flex-start, center);
+    &:nth-child(1),
+    &:nth-child(2) {
+      margin-bottom: 5px;
+    }
+  }
+  &__hourly-big-weather-icon {
+    width: 50px;
+    height: 50px;
+  }
+  &__date-time {
+    @include font($secondary-font, 25px, 400, $dark);
+  }
+  &__hourly-weather-kind {
+    @include font($secondary-font, 20px, 600, $dark);
+  }
+  &__hourly-temperature {
+    @include font($secondary-font, 40px, 600, $dark);
   }
 }

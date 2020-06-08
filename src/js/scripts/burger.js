@@ -43,10 +43,10 @@ export function useBurgerMenu() {
     changeVisibilityToVisible();
     if (rightCounter == 360) return true;
     if (topCounter < 90 && rightCounter == 40) {
-      $burgerMenu.style.top = `${(topCounter += 5)}px`;
+      $burgerMenu.style.top = `${(topCounter += 10)}px`;
     }
     if (topCounter == 90 && rightCounter < 360) {
-      $burgerMenu.style.right = `${(rightCounter += 5)}px`;
+      $burgerMenu.style.right = `${(rightCounter += 10)}px`;
     }
     setTimeout(animateMenuForward, 5);
   }
