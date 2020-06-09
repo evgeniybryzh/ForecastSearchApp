@@ -84,7 +84,7 @@
     padding: 5px 15px 5px 15px;
   }
   &__date {
-    flex-basis: 15%;
+    flex-basis: 11%;
   }
   &__hourly-weather-box {
     flex-basis: 70%;
@@ -92,7 +92,7 @@
     flex-wrap: wrap;
   }
   &__hourly-temperature-box {
-    flex-basis: 15%;
+    flex-basis: 19%;
     @include flex-main;
   }
   &__hourly-values {
@@ -108,10 +108,10 @@
     height: 50px;
   }
   &__date-time {
-    @include font($secondary-font, 25px, 400, $dark);
+    @include font($secondary-font, 15px, 600, $dark);
   }
   &__hourly-weather-kind {
-    @include font($secondary-font, 20px, 600, $dark);
+    @include font($secondary-font, 15px, 600, $dark);
   }
   &__hourly-temperature {
     @include font($secondary-font, 40px, 600, $dark);

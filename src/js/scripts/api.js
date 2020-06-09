@@ -1,10 +1,9 @@
 "use strict";
-
+import { showWeatherInfo, showWeatherHourlyInfo } from "./render";
 export function getResponse() {
   const API_KEY = "d6e7fd6926ec77363ffce0e10bfe83b3";
   const BASE_URL = `https://api.openweathermap.org/data/2.5/weather?q=`;
   const SECONDARY_URL = `https://api.openweathermap.org/data/2.5/forecast?q=`;
-
   const $cards = document.getElementById("cards");
   const $cardsInfo = document.getElementById("cards-info");
   const $infoDetails = document.getElementById("info-details");
@@ -20,34 +19,6 @@ export function getResponse() {
 
   const getSearchUrlForDays = (city) => {
     return `${SECONDARY_URL}${city}&units=celsius&appid=${API_KEY}`;
-  };
-  const showWeatherInfo = (data) => {
-    const $cityName = document.getElementById("city-name");
-    const cityName = data.name;
-    const cityCountry = data.sys.country;
-    const $temperature = document.getElementById("temperature");
-    const currentTemp = Math.round(data.main.temp - 273.15);
-    const $humidityInfo = document.getElementById("humidity-info");
-    const humidity = data.main.humidity;
-    const $pressureInfo = document.getElementById("pressure-info");
-    const pressure = data.main.pressure;
-    const currentWeather = data.weather[0].main;
-    const $windDirInfo = document.getElementById("wind-dir-info");
-    const windDirection = data.wind.deg;
-    const $windSpeedInfo = document.getElementById("wind-speed-info");
-    const windSpeed = data.wind.speed;
-    const $weatherIconBig = document.getElementById("weather-icon-big");
-    const icon = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-    $cityName.innerText = `${cityName}, ${cityCountry}`;
-    if (cityCountry == undefined) {
-      $cityName.innerText = `${cityName}`;
-    }
-    $temperature.innerHTML = `${currentTemp} &deg;`;
-    $weatherIconBig.setAttribute("src", icon);
-    $humidityInfo.innerText = `Humidity:  ${humidity}%`;
-    $pressureInfo.innerText = `Pressure: ${pressure} hPa`;
-    $windDirInfo.innerText = `Wind Direction: ${windDirection} deg`;
-    $windSpeedInfo.innerText = `Wind Speed: ${windSpeed} mps`;
   };
 
   const getResponse = (query) => {
@@ -69,6 +40,7 @@ export function getResponse() {
       fetch(getSearchUrlForDays(query))
         .then((res) => res.json())
         .then((data) => {
+          showWeatherHourlyInfo(data);
           console.log(data);
         })
         .catch((err) => {

@@ -9,15 +9,19 @@ export function changeBG() {
   document.addEventListener("click", (event) => {
     if (event.target == $buttonSunny) {
       $video.src = "images/sunny.mp4";
+      $video.poster = "images/sunny-poster.jpg";
     }
     if (event.target == $buttonRainy) {
       $video.src = "images/rainy.mp4";
+      $video.poster = "images/rainy-poster.jpg";
     }
     if (event.target == $buttonFoggy) {
       $video.src = "images/foggy.mp4";
+      $video.poster = "images/foggy-poster.jpg";
     }
     if (event.target == $buttonThunder) {
       $video.src = "images/thunder.mp4";
+      $video.poster = "images/thunder-poster.jpg";
     }
   });
 }

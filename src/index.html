@@ -8,7 +8,14 @@
   </head>
   <body>
     <section class="forecast">
-      <video class="forecast__video" autoplay muted loop id="video">
+      <video
+        poster="images/clounds-poster.jpg"
+        class="forecast__video"
+        autoplay
+        muted
+        loop
+        id="video"
+      >
         <source id="video-source" src="images/Clouds.mp4" type="video/mp4" />
       </video>
       <header class="header forecast__header">
@@ -198,7 +205,7 @@
           <ul class="info__hourly-info-box">
             <li class="info__hourly-info">
               <div class="info__date">
-                <span class="info__date-time">00:00</span>
+                <span id="firstTime" class="info__date-time">00:00</span>
               </div>
               <ul class="info__hourly-weather-box">
                 <li class="info__hourly-values">
@@ -207,7 +214,11 @@
                     src="images/humidity.png"
                     alt="icon"
                   />
-                  <span class="info__hourly-weather-kind">humidity</span>
+                  <span
+                    id="hourly-00-humidity"
+                    class="info__hourly-weather-kind"
+                    >humidity</span
+                  >
                 </li>
                 <li class="info__hourly-values">
                   <img
@@ -215,7 +226,12 @@
                     src="images/indicator.png"
                     alt="icon"
                   />
-                  <span class="info__hourly-weather-kind"> pressure</span>
+                  <span
+                    id="hourly-00-pressure"
+                    class="info__hourly-weather-kind"
+                  >
+                    pressure</span
+                  >
                 </li>
                 <li class="info__hourly-values">
                   <img
@@ -224,7 +240,9 @@
                     alt="icon"
                   />
 
-                  <span class="info__hourly-weather-kind">windDirection</span>
+                  <span id="hourly-00-wdir" class="info__hourly-weather-kind"
+                    >windDirection</span
+                  >
                 </li>
                 <li class="info__hourly-values">
                   <img
@@ -232,16 +250,18 @@
                     src="images/wind.png"
                     alt="icon"
                   />
-                  <span class="info__hourly-weather-kind">windSpeed</span>
+                  <span id="hourly-00-wspeed" class="info__hourly-weather-kind"
+                    >windSpeed</span
+                  >
                 </li>
               </ul>
               <div class="info__hourly-temperature-box">
-                <h2 id="hourly-temperature" class="info__hourly-temperature">
+                <h2 id="hourly-00-temperature" class="info__hourly-temperature">
                   26&deg;
                 </h2>
 
                 <img
-                  id="houlrly-weather-icon-big"
+                  id="hourly-00-icon"
                   class="info__hourly-big-weather-icon"
                   src="images/temperature.png"
                   alt="weather-icon"
@@ -250,7 +270,7 @@
             </li>
             <li class="info__hourly-info">
               <div class="info__date">
-                <span class="info__date-time">06:00</span>
+                <span id="secondTime" class="info__date-time">06:00</span>
               </div>
               <ul class="info__hourly-weather-box">
                 <li class="info__hourly-values">
@@ -259,7 +279,11 @@
                     src="images/humidity.png"
                     alt="icon"
                   />
-                  <span class="info__hourly-weather-kind">humidity</span>
+                  <span
+                    id="hourly-06-humidity"
+                    class="info__hourly-weather-kind"
+                    >humidity</span
+                  >
                 </li>
                 <li class="info__hourly-values">
                   <img
@@ -267,7 +291,12 @@
                     src="images/indicator.png"
                     alt="icon"
                   />
-                  <span class="info__hourly-weather-kind"> pressure</span>
+                  <span
+                    id="hourly-06-pressure"
+                    class="info__hourly-weather-kind"
+                  >
+                    pressure</span
+                  >
                 </li>
                 <li class="info__hourly-values">
                   <img
@@ -276,7 +305,9 @@
                     alt="icon"
                   />
 
-                  <span class="info__hourly-weather-kind">windDirection</span>
+                  <span id="hourly-06-wdir" class="info__hourly-weather-kind"
+                    >windDirection</span
+                  >
                 </li>
                 <li class="info__hourly-values">
                   <img
@@ -284,16 +315,18 @@
                     src="images/wind.png"
                     alt="icon"
                   />
-                  <span class="info__hourly-weather-kind">windSpeed</span>
+                  <span id="hourly-06-wspeed" class="info__hourly-weather-kind"
+                    >windSpeed</span
+                  >
                 </li>
               </ul>
               <div class="info__hourly-temperature-box">
-                <h2 id="hourly-temperature" class="info__hourly-temperature">
+                <h2 id="hourly-06-temperature" class="info__hourly-temperature">
                   26&deg;
                 </h2>
 
                 <img
-                  id="houlrly-weather-icon-big"
+                  id="hourly-06-icon"
                   class="info__hourly-big-weather-icon"
                   src="images/temperature.png"
                   alt="weather-icon"
@@ -302,7 +335,7 @@
             </li>
             <li class="info__hourly-info">
               <div class="info__date">
-                <span class="info__date-time">12:00</span>
+                <span id="thirdTime" class="info__date-time">12:00</span>
               </div>
               <ul class="info__hourly-weather-box">
                 <li class="info__hourly-values">
@@ -311,7 +344,11 @@
                     src="images/humidity.png"
                     alt="icon"
                   />
-                  <span class="info__hourly-weather-kind">humidity</span>
+                  <span
+                    id="hourly-12-humidity"
+                    class="info__hourly-weather-kind"
+                    >humidity</span
+                  >
                 </li>
                 <li class="info__hourly-values">
                   <img
@@ -319,7 +356,12 @@
                     src="images/indicator.png"
                     alt="icon"
                   />
-                  <span class="info__hourly-weather-kind"> pressure</span>
+                  <span
+                    id="hourly-12-pressure"
+                    class="info__hourly-weather-kind"
+                  >
+                    pressure</span
+                  >
                 </li>
                 <li class="info__hourly-values">
                   <img
@@ -328,7 +370,9 @@
                     alt="icon"
                   />
 
-                  <span class="info__hourly-weather-kind">windDirection</span>
+                  <span id="hourly-12-wdir" class="info__hourly-weather-kind"
+                    >windDirection</span
+                  >
                 </li>
                 <li class="info__hourly-values">
                   <img
@@ -336,16 +380,18 @@
                     src="images/wind.png"
                     alt="icon"
                   />
-                  <span class="info__hourly-weather-kind">windSpeed</span>
+                  <span id="hourly-12-wspeed" class="info__hourly-weather-kind"
+                    >windSpeed</span
+                  >
                 </li>
               </ul>
               <div class="info__hourly-temperature-box">
-                <h2 id="hourly-temperature" class="info__hourly-temperature">
+                <h2 id="hourly-12-temperature" class="info__hourly-temperature">
                   26&deg;
                 </h2>
 
                 <img
-                  id="houlrly-weather-icon-big"
+                  id="hourly-12-icon"
                   class="info__hourly-big-weather-icon"
                   src="images/temperature.png"
                   alt="weather-icon"
@@ -354,7 +400,7 @@
             </li>
             <li class="info__hourly-info">
               <div class="info__date">
-                <span class="info__date-time">18:00</span>
+                <span id="fourthTime" class="info__date-time">18:00</span>
               </div>
               <ul class="info__hourly-weather-box">
                 <li class="info__hourly-values">
@@ -363,7 +409,11 @@
                     src="images/humidity.png"
                     alt="icon"
                   />
-                  <span class="info__hourly-weather-kind">humidity</span>
+                  <span
+                    id="hourly-18-humidity"
+                    class="info__hourly-weather-kind"
+                    >humidity</span
+                  >
                 </li>
                 <li class="info__hourly-values">
                   <img
@@ -371,7 +421,12 @@
                     src="images/indicator.png"
                     alt="icon"
                   />
-                  <span class="info__hourly-weather-kind"> pressure</span>
+                  <span
+                    id="hourly-18-pressure"
+                    class="info__hourly-weather-kind"
+                  >
+                    pressure</span
+                  >
                 </li>
                 <li class="info__hourly-values">
                   <img
@@ -380,7 +435,9 @@
                     alt="icon"
                   />
 
-                  <span class="info__hourly-weather-kind">windDirection</span>
+                  <span id="hourly-18-wdir" class="info__hourly-weather-kind"
+                    >windDirection</span
+                  >
                 </li>
                 <li class="info__hourly-values">
                   <img
@@ -388,16 +445,18 @@
                     src="images/wind.png"
                     alt="icon"
                   />
-                  <span class="info__hourly-weather-kind">windSpeed</span>
+                  <span id="hourly-18-wspeed" class="info__hourly-weather-kind"
+                    >windSpeed</span
+                  >
                 </li>
               </ul>
               <div class="info__hourly-temperature-box">
-                <h2 id="hourly-temperature" class="info__hourly-temperature">
+                <h2 id="hourly-18-temperature" class="info__hourly-temperature">
                   26&deg;
                 </h2>
 
                 <img
-                  id="houlrly-weather-icon-big"
+                  id="hourly-18-icon"
                   class="info__hourly-big-weather-icon"
                   src="images/temperature.png"
                   alt="weather-icon"
@@ -406,7 +465,7 @@
             </li>
             <li class="info__hourly-info">
               <div class="info__date">
-                <span class="info__date-time">21:00</span>
+                <span id="lastTime" class="info__date-time">21:00</span>
               </div>
               <ul class="info__hourly-weather-box">
                 <li class="info__hourly-values">
@@ -415,7 +474,11 @@
                     src="images/humidity.png"
                     alt="icon"
                   />
-                  <span class="info__hourly-weather-kind">humidity</span>
+                  <span
+                    id="hourly-21-humidity"
+                    class="info__hourly-weather-kind"
+                    >humidity</span
+                  >
                 </li>
                 <li class="info__hourly-values">
                   <img
@@ -423,7 +486,12 @@
                     src="images/indicator.png"
                     alt="icon"
                   />
-                  <span class="info__hourly-weather-kind"> pressure</span>
+                  <span
+                    id="hourly-21-pressure"
+                    class="info__hourly-weather-kind"
+                  >
+                    pressure</span
+                  >
                 </li>
                 <li class="info__hourly-values">
                   <img
@@ -432,7 +500,9 @@
                     alt="icon"
                   />
 
-                  <span class="info__hourly-weather-kind">windDirection</span>
+                  <span id="hourly-21-wdir" class="info__hourly-weather-kind"
+                    >windDirection</span
+                  >
                 </li>
                 <li class="info__hourly-values">
                   <img
@@ -440,16 +510,18 @@
                     src="images/wind.png"
                     alt="icon"
                   />
-                  <span class="info__hourly-weather-kind">windSpeed</span>
+                  <span id="hourly-21-wspeed" class="info__hourly-weather-kind"
+                    >windSpeed</span
+                  >
                 </li>
               </ul>
               <div class="info__hourly-temperature-box">
-                <h2 id="hourly-temperature" class="info__hourly-temperature">
+                <h2 id="hourly-21-temperature" class="info__hourly-temperature">
                   26&deg;
                 </h2>
 
                 <img
-                  id="houlrly-weather-icon-big"
+                  id="hourly-21-icon"
                   class="info__hourly-big-weather-icon"
                   src="images/temperature.png"
                   alt="weather-icon"
