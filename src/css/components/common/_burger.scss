@@ -36,6 +36,7 @@
     display: none;
     right: 40px;
     top: -40px;
+    z-index: 200;
   }
   &__menu-title {
     @include font($main-font, 35px, 400, $dark);

@@ -1,6 +1,8 @@
 "use strict";
 import { showWeatherInfo, showWeatherHourlyInfo } from "./render";
 import { getGeo } from "./geo";
+import { useMap } from "./map";
+
 export function getResponse() {
   const API_KEY = "d6e7fd6926ec77363ffce0e10bfe83b3";
   const BASE_URL = `https://api.openweathermap.org/data/2.5/weather?q=`;
@@ -28,6 +30,8 @@ export function getResponse() {
         .then((res) => res.json())
         .then((data) => {
           showWeatherInfo(data);
+          let coords = [data.coord.lat, data.coord.lon];
+          useMap(coords);
         })
         .catch((err) => {
           console.log(err);
@@ -42,12 +46,10 @@ export function getResponse() {
         .then((res) => res.json())
         .then((data) => {
           showWeatherHourlyInfo(data);
-          console.log(data);
         })
         .catch((err) => {
           console.log(err);
           const $cityName = document.getElementById("city-name");
-          $cityName.innerText = `"${query}" - is wrong City name!`;
         });
     }
   };

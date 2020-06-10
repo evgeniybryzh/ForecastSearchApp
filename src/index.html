@@ -4,8 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/glide.core.min.css" />
-
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""
+    />
     <title>Forecats Weather Tool</title>
   </head>
   <body>
@@ -140,518 +144,411 @@
         </div>
       </header>
       <div id="cards" class="forecast__cards cards container">
-        <div id="cards-map" class="cards__map map"></div>
-        <div class="cards__slider-box">
-          <div class="glide">
-            <div class="glide__track" data-glide-el="track">
-              <ul class="glide__slides">
-                <li class="glide__slide">
-                  <div id="cards-info" class="cards__info info">
-                    <div id="info-details" class="info__details">
-                      <div class="info__title-box">
-                        <span class="info__name">Current Weather:</span>
-                        <h2 id="city-name" class="info__main-title">
-                          Please Wait...
-                        </h2>
-                      </div>
-                      <div class="info__weather-details">
-                        <div class="info__temperature-box">
-                          <h2 id="temperature" class="info__temperature">
-                            26&deg;
-                          </h2>
+        <div id="mapid" class="cards__map map"></div>
 
-                          <img
-                            id="weather-icon-big"
-                            class="info__big-weather-icon"
-                            src="images/temperature.png"
-                            alt="weather-icon"
-                          />
-                        </div>
-                        <ul class="info__weather-box">
-                          <li class="info__values">
-                            <img
-                              class="info__weather-icon"
-                              src="images/humidity.png"
-                              alt="icon"
-                            />
-                            <span id="humidity-info" class="info__weather-kind"
-                              >humidity</span
-                            >
-                          </li>
-                          <li class="info__values">
-                            <img
-                              class="info__weather-icon"
-                              src="images/indicator.png"
-                              alt="icon"
-                            />
-                            <span id="pressure-info" class="info__weather-kind">
-                              pressure</span
-                            >
-                          </li>
-                          <li class="info__values">
-                            <img
-                              class="info__weather-icon"
-                              src="images/wind-direction.png"
-                              alt="icon"
-                            />
+        <div id="cards-info" class="cards__info info">
+          <div id="info-details" class="info__details">
+            <div class="info__title-box">
+              <span class="info__name">Current Weather:</span>
+              <h2 id="city-name" class="info__main-title">
+                Please Wait...
+              </h2>
+            </div>
+            <div class="info__weather-details">
+              <div class="info__temperature-box">
+                <h2 id="temperature" class="info__temperature">
+                  --&deg;
+                </h2>
 
-                            <span id="wind-dir-info" class="info__weather-kind"
-                              >windDirection</span
-                            >
-                          </li>
-                          <li class="info__values">
-                            <img
-                              class="info__weather-icon"
-                              src="images/wind.png"
-                              alt="icon"
-                            />
-                            <span
-                              id="wind-speed-info"
-                              class="info__weather-kind"
-                              >windSpeed</span
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <h2 id="info-title" class="info__title">Hourly Forecast</h2>
-                    <ul class="info__hourly-info-box">
-                      <li class="info__hourly-info">
-                        <div class="info__date">
-                          <span id="firstTime" class="info__date-time"
-                            >00:00</span
-                          >
-                        </div>
-                        <ul class="info__hourly-weather-box">
-                          <li class="info__hourly-values">
-                            <img
-                              class="info__weather-icon"
-                              src="images/humidity.png"
-                              alt="icon"
-                            />
-                            <span
-                              id="hourly-00-humidity"
-                              class="info__hourly-weather-kind"
-                              >humidity</span
-                            >
-                          </li>
-                          <li class="info__hourly-values">
-                            <img
-                              class="info__weather-icon"
-                              src="images/indicator.png"
-                              alt="icon"
-                            />
-                            <span
-                              id="hourly-00-pressure"
-                              class="info__hourly-weather-kind"
-                            >
-                              pressure</span
-                            >
-                          </li>
-                          <li class="info__hourly-values">
-                            <img
-                              class="info__weather-icon"
-                              src="images/wind-direction.png"
-                              alt="icon"
-                            />
-
-                            <span
-                              id="hourly-00-wdir"
-                              class="info__hourly-weather-kind"
-                              >windDirection</span
-                            >
-                          </li>
-                          <li class="info__hourly-values">
-                            <img
-                              class="info__weather-icon"
-                              src="images/wind.png"
-                              alt="icon"
-                            />
-                            <span
-                              id="hourly-00-wspeed"
-                              class="info__hourly-weather-kind"
-                              >windSpeed</span
-                            >
-                          </li>
-                        </ul>
-                        <div class="info__hourly-temperature-box">
-                          <h2
-                            id="hourly-00-temperature"
-                            class="info__hourly-temperature"
-                          >
-                            26&deg;
-                          </h2>
-
-                          <img
-                            id="hourly-00-icon"
-                            class="info__hourly-big-weather-icon"
-                            src="images/temperature.png"
-                            alt="weather-icon"
-                          />
-                        </div>
-                      </li>
-                      <li class="info__hourly-info">
-                        <div class="info__date">
-                          <span id="secondTime" class="info__date-time"
-                            >06:00</span
-                          >
-                        </div>
-                        <ul class="info__hourly-weather-box">
-                          <li class="info__hourly-values">
-                            <img
-                              class="info__weather-icon"
-                              src="images/humidity.png"
-                              alt="icon"
-                            />
-                            <span
-                              id="hourly-06-humidity"
-                              class="info__hourly-weather-kind"
-                              >humidity</span
-                            >
-                          </li>
-                          <li class="info__hourly-values">
-                            <img
-                              class="info__weather-icon"
-                              src="images/indicator.png"
-                              alt="icon"
-                            />
-                            <span
-                              id="hourly-06-pressure"
-                              class="info__hourly-weather-kind"
-                            >
-                              pressure</span
-                            >
-                          </li>
-                          <li class="info__hourly-values">
-                            <img
-                              class="info__weather-icon"
-                              src="images/wind-direction.png"
-                              alt="icon"
-                            />
-
-                            <span
-                              id="hourly-06-wdir"
-                              class="info__hourly-weather-kind"
-                              >windDirection</span
-                            >
-                          </li>
-                          <li class="info__hourly-values">
-                            <img
-                              class="info__weather-icon"
-                              src="images/wind.png"
-                              alt="icon"
-                            />
-                            <span
-                              id="hourly-06-wspeed"
-                              class="info__hourly-weather-kind"
-                              >windSpeed</span
-                            >
-                          </li>
-                        </ul>
-                        <div class="info__hourly-temperature-box">
-                          <h2
-                            id="hourly-06-temperature"
-                            class="info__hourly-temperature"
-                          >
-                            26&deg;
-                          </h2>
-
-                          <img
-                            id="hourly-06-icon"
-                            class="info__hourly-big-weather-icon"
-                            src="images/temperature.png"
-                            alt="weather-icon"
-                          />
-                        </div>
-                      </li>
-                      <li class="info__hourly-info">
-                        <div class="info__date">
-                          <span id="thirdTime" class="info__date-time"
-                            >12:00</span
-                          >
-                        </div>
-                        <ul class="info__hourly-weather-box">
-                          <li class="info__hourly-values">
-                            <img
-                              class="info__weather-icon"
-                              src="images/humidity.png"
-                              alt="icon"
-                            />
-                            <span
-                              id="hourly-12-humidity"
-                              class="info__hourly-weather-kind"
-                              >humidity</span
-                            >
-                          </li>
-                          <li class="info__hourly-values">
-                            <img
-                              class="info__weather-icon"
-                              src="images/indicator.png"
-                              alt="icon"
-                            />
-                            <span
-                              id="hourly-12-pressure"
-                              class="info__hourly-weather-kind"
-                            >
-                              pressure</span
-                            >
-                          </li>
-                          <li class="info__hourly-values">
-                            <img
-                              class="info__weather-icon"
-                              src="images/wind-direction.png"
-                              alt="icon"
-                            />
-
-                            <span
-                              id="hourly-12-wdir"
-                              class="info__hourly-weather-kind"
-                              >windDirection</span
-                            >
-                          </li>
-                          <li class="info__hourly-values">
-                            <img
-                              class="info__weather-icon"
-                              src="images/wind.png"
-                              alt="icon"
-                            />
-                            <span
-                              id="hourly-12-wspeed"
-                              class="info__hourly-weather-kind"
-                              >windSpeed</span
-                            >
-                          </li>
-                        </ul>
-                        <div class="info__hourly-temperature-box">
-                          <h2
-                            id="hourly-12-temperature"
-                            class="info__hourly-temperature"
-                          >
-                            26&deg;
-                          </h2>
-
-                          <img
-                            id="hourly-12-icon"
-                            class="info__hourly-big-weather-icon"
-                            src="images/temperature.png"
-                            alt="weather-icon"
-                          />
-                        </div>
-                      </li>
-                      <li class="info__hourly-info">
-                        <div class="info__date">
-                          <span id="fourthTime" class="info__date-time"
-                            >18:00</span
-                          >
-                        </div>
-                        <ul class="info__hourly-weather-box">
-                          <li class="info__hourly-values">
-                            <img
-                              class="info__weather-icon"
-                              src="images/humidity.png"
-                              alt="icon"
-                            />
-                            <span
-                              id="hourly-18-humidity"
-                              class="info__hourly-weather-kind"
-                              >humidity</span
-                            >
-                          </li>
-                          <li class="info__hourly-values">
-                            <img
-                              class="info__weather-icon"
-                              src="images/indicator.png"
-                              alt="icon"
-                            />
-                            <span
-                              id="hourly-18-pressure"
-                              class="info__hourly-weather-kind"
-                            >
-                              pressure</span
-                            >
-                          </li>
-                          <li class="info__hourly-values">
-                            <img
-                              class="info__weather-icon"
-                              src="images/wind-direction.png"
-                              alt="icon"
-                            />
-
-                            <span
-                              id="hourly-18-wdir"
-                              class="info__hourly-weather-kind"
-                              >windDirection</span
-                            >
-                          </li>
-                          <li class="info__hourly-values">
-                            <img
-                              class="info__weather-icon"
-                              src="images/wind.png"
-                              alt="icon"
-                            />
-                            <span
-                              id="hourly-18-wspeed"
-                              class="info__hourly-weather-kind"
-                              >windSpeed</span
-                            >
-                          </li>
-                        </ul>
-                        <div class="info__hourly-temperature-box">
-                          <h2
-                            id="hourly-18-temperature"
-                            class="info__hourly-temperature"
-                          >
-                            26&deg;
-                          </h2>
-
-                          <img
-                            id="hourly-18-icon"
-                            class="info__hourly-big-weather-icon"
-                            src="images/temperature.png"
-                            alt="weather-icon"
-                          />
-                        </div>
-                      </li>
-                      <li class="info__hourly-info">
-                        <div class="info__date">
-                          <span id="lastTime" class="info__date-time"
-                            >21:00</span
-                          >
-                        </div>
-                        <ul class="info__hourly-weather-box">
-                          <li class="info__hourly-values">
-                            <img
-                              class="info__weather-icon"
-                              src="images/humidity.png"
-                              alt="icon"
-                            />
-                            <span
-                              id="hourly-21-humidity"
-                              class="info__hourly-weather-kind"
-                              >humidity</span
-                            >
-                          </li>
-                          <li class="info__hourly-values">
-                            <img
-                              class="info__weather-icon"
-                              src="images/indicator.png"
-                              alt="icon"
-                            />
-                            <span
-                              id="hourly-21-pressure"
-                              class="info__hourly-weather-kind"
-                            >
-                              pressure</span
-                            >
-                          </li>
-                          <li class="info__hourly-values">
-                            <img
-                              class="info__weather-icon"
-                              src="images/wind-direction.png"
-                              alt="icon"
-                            />
-
-                            <span
-                              id="hourly-21-wdir"
-                              class="info__hourly-weather-kind"
-                              >windDirection</span
-                            >
-                          </li>
-                          <li class="info__hourly-values">
-                            <img
-                              class="info__weather-icon"
-                              src="images/wind.png"
-                              alt="icon"
-                            />
-                            <span
-                              id="hourly-21-wspeed"
-                              class="info__hourly-weather-kind"
-                              >windSpeed</span
-                            >
-                          </li>
-                        </ul>
-                        <div class="info__hourly-temperature-box">
-                          <h2
-                            id="hourly-21-temperature"
-                            class="info__hourly-temperature"
-                          >
-                            26&deg;
-                          </h2>
-
-                          <img
-                            id="hourly-21-icon"
-                            class="info__hourly-big-weather-icon"
-                            src="images/temperature.png"
-                            alt="weather-icon"
-                          />
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
+                <img
+                  id="weather-icon-big"
+                  class="info__big-weather-icon"
+                  src="images/placeholder-icon.png"
+                  alt="weather-icon"
+                />
+              </div>
+              <ul class="info__weather-box">
+                <li class="info__values">
+                  <img
+                    class="info__weather-icon"
+                    src="images/humidity.png"
+                    alt="icon"
+                  />
+                  <span id="humidity-info" class="info__weather-kind"
+                    >Humidity:</span
+                  >
                 </li>
-                <li class="glide__slide">
-                  <ul class="info__daily-forecast">
-                    <li class="info__daily-forecast-title"></li>
-                    <li class="info__daily-forecast-title"></li>
-                    <li class="info__daily-forecast-title"></li>
-                    <li class="info__daily-forecast-title"></li>
-                    <li class="info__daily-forecast-title"></li>
-                    <li class="info__daily-forecast-title"></li>
-                  </ul>
+                <li class="info__values">
+                  <img
+                    class="info__weather-icon"
+                    src="images/indicator.png"
+                    alt="icon"
+                  />
+                  <span id="pressure-info" class="info__weather-kind">
+                    Pressure:</span
+                  >
+                </li>
+                <li class="info__values">
+                  <img
+                    class="info__weather-icon"
+                    src="images/wind-direction.png"
+                    alt="icon"
+                  />
+
+                  <span id="wind-dir-info" class="info__weather-kind"
+                    >Wind direction:</span
+                  >
+                </li>
+                <li class="info__values">
+                  <img
+                    class="info__weather-icon"
+                    src="images/wind.png"
+                    alt="icon"
+                  />
+                  <span id="wind-speed-info" class="info__weather-kind"
+                    >Wind speed:</span
+                  >
                 </li>
               </ul>
             </div>
-            <div class="glide__arrows" data-glide-el="controls">
-              <svg class="glide__arrow glide__arrow--left" data-glide-dir="<">
-                <g id="Page-1" fill-rule="evenodd">
-                  <g fill-rule="nonzero" transform="translate(0 -1)">
-                    <path
-                      d="m59 38c-1.917821-.0355552-3.7968399.5425506-5.363 1.65-2.5899981 1.7998993-6.0260019 1.7998993-8.616 0-3.2358247-2.1999478-7.4871753-2.1999478-10.723 0-1.2470896.9119772-2.7604616 1.3865538-4.305 1.35-1.5448253.0363999-3.058466-.4381507-4.306-1.35-1.5656062-1.1070415-3.4438589-1.6851272-5.361-1.65-1.9168011-.0349132-3.7946707.5431623-5.36 1.65-1.245756.9108573-2.7571721 1.3853716-4.3 1.35-1.54288094.0357466-3.05441475-.4388047-4.3-1.35-1.56677163-1.1085072-3.44709003-1.6866894-5.366-1.65-.55228475 0-1 .4477153-1 1s.44771525 1 1 1c1.54280666-.0352218 3.05417576.4392778 4.3 1.35 1.56547635 1.1080725 3.44439043 1.6862538 5.362 1.65 1.9165303.0351898 3.7941663-.5429217 5.359-1.65 1.2472263-.9117064 2.760504-1.3862535 4.305-1.35 1.5448253-.0363999 3.058466.4381507 4.306 1.35 1.5656062 1.1070415 3.4438589 1.6851272 5.361 1.65 1.9168604.0353337 3.7948582-.5427813 5.36-1.65 2.5888804-1.7999615 6.0241196-1.7999615 8.613 0 3.2369301 2.1999129 7.4890699 2.1999129 10.726 0 1.2482178-.9119996 2.7625371-1.3865426 4.308-1.35.5522847 0 1-.4477153 1-1s-.4477153-1-1-1z"
-                    />
-                    <path
-                      d="m59 44c-1.917821-.0355552-3.7968399.5425506-5.363 1.65-2.5899981 1.7998993-6.0260019 1.7998993-8.616 0-3.2358247-2.1999478-7.4871753-2.1999478-10.723 0-1.2470896.9119772-2.7604616 1.3865538-4.305 1.35-1.5448253.0363999-3.058466-.4381507-4.306-1.35-1.5656062-1.1070415-3.4438589-1.6851272-5.361-1.65-1.9168011-.0349132-3.7946707.5431623-5.36 1.65-1.245756.9108573-2.7571721 1.3853716-4.3 1.35-1.54288094.0357466-3.05441475-.4388047-4.3-1.35-1.56677163-1.1085072-3.44709003-1.6866894-5.366-1.65-.55228475 0-1 .4477153-1 1s.44771525 1 1 1c1.54280666-.0352218 3.05417576.4392778 4.3 1.35 1.56547635 1.1080725 3.44439043 1.6862538 5.362 1.65 1.9165303.0351898 3.7941663-.5429217 5.359-1.65 1.2472263-.9117064 2.760504-1.3862535 4.305-1.35 1.5448253-.0363999 3.058466.4381507 4.306 1.35 1.5656062 1.1070415 3.4438589 1.6851272 5.361 1.65 1.9168604.0353337 3.7948582-.5427813 5.36-1.65 2.5888804-1.7999615 6.0241196-1.7999615 8.613 0 3.2369301 2.1999129 7.4890699 2.1999129 10.726 0 1.2482178-.9119996 2.7625371-1.3865426 4.308-1.35.5522847 0 1-.4477153 1-1s-.4477153-1-1-1z"
-                    />
-                    <path
-                      d="m59 50c-1.917821-.0355552-3.7968399.5425506-5.363 1.65-2.5899981 1.7998993-6.0260019 1.7998993-8.616 0-3.2358247-2.1999478-7.4871753-2.1999478-10.723 0-1.2470896.9119772-2.7604616 1.3865538-4.305 1.35-1.5448253.0363999-3.058466-.4381507-4.306-1.35-1.5656062-1.1070415-3.4438589-1.6851272-5.361-1.65-1.9168011-.0349132-3.7946707.5431623-5.36 1.65-1.245756.9108573-2.7571721 1.3853716-4.3 1.35-1.54288094.0357466-3.05441475-.4388047-4.3-1.35-1.56677163-1.1085072-3.44709003-1.6866894-5.366-1.65-.55228475 0-1 .4477153-1 1s.44771525 1 1 1c1.54280666-.0352218 3.05417576.4392778 4.3 1.35 1.56547635 1.1080725 3.44439043 1.6862538 5.362 1.65 1.9165303.0351898 3.7941663-.5429217 5.359-1.65 1.2472263-.9117064 2.760504-1.3862535 4.305-1.35 1.5448253-.0363999 3.058466.4381507 4.306 1.35 1.5656062 1.1070415 3.4438589 1.6851272 5.361 1.65 1.9168604.0353337 3.7948582-.5427813 5.36-1.65 2.5888804-1.7999615 6.0241196-1.7999615 8.613 0 3.2369301 2.1999129 7.4890699 2.1999129 10.726 0 1.2482178-.9119996 2.7625371-1.3865426 4.308-1.35.5522847 0 1-.4477153 1-1s-.4477153-1-1-1z"
-                    />
-                    <path
-                      d="m41 19h-4c-.5522847 0-1 .4477153-1 1v15.26c0 .5522847.4477153 1 1 1s1-.4477153 1-1v-14.26h3c1.1477122.0010569 2.1954448-.65279 2.698822-1.6842238.5033771-1.0314339.3741695-2.2596704-.332822-3.1637762l-11-14c-.5683712-.73071657-1.4422611-1.15810532-2.368-1.15810532s-1.7996288.42738875-2.368 1.15810532l-11 14.007c-.7031692.9047221-.8295675 2.1309715-.325735 3.1601079.5038326 1.0291364 1.5498866 1.6813904 2.695735 1.6808921h3v14.26c0 .5522847.4477153 1 1 1s1-.4477153 1-1v-2.279h2.148c.5522847 0 1-.4477153 1-1s-.4477153-1-1-1h-2.148v-2h5.148c.5522847 0 1-.4477153 1-1s-.4477153-1-1-1h-5.148v-2h2.148c.5522847 0 1-.4477153 1-1s-.4477153-1-1-1h-2.148v-2h5.148c.5522847 0 1-.4477153 1-1s-.4477153-1-1-1h-6.148c-.0309651.0047911-.0616703.0111324-.092.019h-3.908c-.3820573.001202-.7314106-.2153933-.9002285-.5581319s-.1275936-.7517151.1062285-1.0538681l11-14c.1960755-.23507034.4863895-.37096464.7925-.37096464s.5964245.1358943.7925.37096464l11 13.993c.2377707.3016724.2817352.7128748.1131177 1.057997-.1686174.3451221-.5200129.5631623-.9041177.561003z"
-                    />
-                    <path
-                      d="m37 54.86c-.5522847 0-1 .4477153-1 1v2.14c0 .5522847-.4477153 1-1 1h-10c-.5522847 0-1-.4477153-1-1v-2.13c0-.5522847-.4477153-1-1-1s-1 .4477153-1 1v2.13c0 1.6568542 1.3431458 3 3 3h10c1.6568542 0 3-1.3431458 3-3v-2.14c0-.5522847-.4477153-1-1-1z"
-                    />
-                  </g>
-                </g>
-              </svg>
-              <svg class="glide__arrow glide__arrow--right" data-glide-dir=">">
-                <g id="Page-2" fill-rule="evenodd">
-                  <g fill-rule="nonzero" transform="translate(0 -1)">
-                    <path
-                      d="m59 38c-1.917821-.0355552-3.7968399.5425506-5.363 1.65-2.5899981 1.7998993-6.0260019 1.7998993-8.616 0-3.2358247-2.1999478-7.4871753-2.1999478-10.723 0-1.2470896.9119772-2.7604616 1.3865538-4.305 1.35-1.5448253.0363999-3.058466-.4381507-4.306-1.35-1.5656062-1.1070415-3.4438589-1.6851272-5.361-1.65-1.9168011-.0349132-3.7946707.5431623-5.36 1.65-1.245756.9108573-2.7571721 1.3853716-4.3 1.35-1.54288094.0357466-3.05441475-.4388047-4.3-1.35-1.56677163-1.1085072-3.44709003-1.6866894-5.366-1.65-.55228475 0-1 .4477153-1 1s.44771525 1 1 1c1.54280666-.0352218 3.05417576.4392778 4.3 1.35 1.56547635 1.1080725 3.44439043 1.6862538 5.362 1.65 1.9165303.0351898 3.7941663-.5429217 5.359-1.65 1.2472263-.9117064 2.760504-1.3862535 4.305-1.35 1.5448253-.0363999 3.058466.4381507 4.306 1.35 1.5656062 1.1070415 3.4438589 1.6851272 5.361 1.65 1.9168604.0353337 3.7948582-.5427813 5.36-1.65 2.5888804-1.7999615 6.0241196-1.7999615 8.613 0 3.2369301 2.1999129 7.4890699 2.1999129 10.726 0 1.2482178-.9119996 2.7625371-1.3865426 4.308-1.35.5522847 0 1-.4477153 1-1s-.4477153-1-1-1z"
-                    />
-                    <path
-                      d="m59 44c-1.917821-.0355552-3.7968399.5425506-5.363 1.65-2.5899981 1.7998993-6.0260019 1.7998993-8.616 0-3.2358247-2.1999478-7.4871753-2.1999478-10.723 0-1.2470896.9119772-2.7604616 1.3865538-4.305 1.35-1.5448253.0363999-3.058466-.4381507-4.306-1.35-1.5656062-1.1070415-3.4438589-1.6851272-5.361-1.65-1.9168011-.0349132-3.7946707.5431623-5.36 1.65-1.245756.9108573-2.7571721 1.3853716-4.3 1.35-1.54288094.0357466-3.05441475-.4388047-4.3-1.35-1.56677163-1.1085072-3.44709003-1.6866894-5.366-1.65-.55228475 0-1 .4477153-1 1s.44771525 1 1 1c1.54280666-.0352218 3.05417576.4392778 4.3 1.35 1.56547635 1.1080725 3.44439043 1.6862538 5.362 1.65 1.9165303.0351898 3.7941663-.5429217 5.359-1.65 1.2472263-.9117064 2.760504-1.3862535 4.305-1.35 1.5448253-.0363999 3.058466.4381507 4.306 1.35 1.5656062 1.1070415 3.4438589 1.6851272 5.361 1.65 1.9168604.0353337 3.7948582-.5427813 5.36-1.65 2.5888804-1.7999615 6.0241196-1.7999615 8.613 0 3.2369301 2.1999129 7.4890699 2.1999129 10.726 0 1.2482178-.9119996 2.7625371-1.3865426 4.308-1.35.5522847 0 1-.4477153 1-1s-.4477153-1-1-1z"
-                    />
-                    <path
-                      d="m59 50c-1.917821-.0355552-3.7968399.5425506-5.363 1.65-2.5899981 1.7998993-6.0260019 1.7998993-8.616 0-3.2358247-2.1999478-7.4871753-2.1999478-10.723 0-1.2470896.9119772-2.7604616 1.3865538-4.305 1.35-1.5448253.0363999-3.058466-.4381507-4.306-1.35-1.5656062-1.1070415-3.4438589-1.6851272-5.361-1.65-1.9168011-.0349132-3.7946707.5431623-5.36 1.65-1.245756.9108573-2.7571721 1.3853716-4.3 1.35-1.54288094.0357466-3.05441475-.4388047-4.3-1.35-1.56677163-1.1085072-3.44709003-1.6866894-5.366-1.65-.55228475 0-1 .4477153-1 1s.44771525 1 1 1c1.54280666-.0352218 3.05417576.4392778 4.3 1.35 1.56547635 1.1080725 3.44439043 1.6862538 5.362 1.65 1.9165303.0351898 3.7941663-.5429217 5.359-1.65 1.2472263-.9117064 2.760504-1.3862535 4.305-1.35 1.5448253-.0363999 3.058466.4381507 4.306 1.35 1.5656062 1.1070415 3.4438589 1.6851272 5.361 1.65 1.9168604.0353337 3.7948582-.5427813 5.36-1.65 2.5888804-1.7999615 6.0241196-1.7999615 8.613 0 3.2369301 2.1999129 7.4890699 2.1999129 10.726 0 1.2482178-.9119996 2.7625371-1.3865426 4.308-1.35.5522847 0 1-.4477153 1-1s-.4477153-1-1-1z"
-                    />
-                    <path
-                      d="m41 19h-4c-.5522847 0-1 .4477153-1 1v15.26c0 .5522847.4477153 1 1 1s1-.4477153 1-1v-14.26h3c1.1477122.0010569 2.1954448-.65279 2.698822-1.6842238.5033771-1.0314339.3741695-2.2596704-.332822-3.1637762l-11-14c-.5683712-.73071657-1.4422611-1.15810532-2.368-1.15810532s-1.7996288.42738875-2.368 1.15810532l-11 14.007c-.7031692.9047221-.8295675 2.1309715-.325735 3.1601079.5038326 1.0291364 1.5498866 1.6813904 2.695735 1.6808921h3v14.26c0 .5522847.4477153 1 1 1s1-.4477153 1-1v-2.279h2.148c.5522847 0 1-.4477153 1-1s-.4477153-1-1-1h-2.148v-2h5.148c.5522847 0 1-.4477153 1-1s-.4477153-1-1-1h-5.148v-2h2.148c.5522847 0 1-.4477153 1-1s-.4477153-1-1-1h-2.148v-2h5.148c.5522847 0 1-.4477153 1-1s-.4477153-1-1-1h-6.148c-.0309651.0047911-.0616703.0111324-.092.019h-3.908c-.3820573.001202-.7314106-.2153933-.9002285-.5581319s-.1275936-.7517151.1062285-1.0538681l11-14c.1960755-.23507034.4863895-.37096464.7925-.37096464s.5964245.1358943.7925.37096464l11 13.993c.2377707.3016724.2817352.7128748.1131177 1.057997-.1686174.3451221-.5200129.5631623-.9041177.561003z"
-                    />
-                    <path
-                      d="m37 54.86c-.5522847 0-1 .4477153-1 1v2.14c0 .5522847-.4477153 1-1 1h-10c-.5522847 0-1-.4477153-1-1v-2.13c0-.5522847-.4477153-1-1-1s-1 .4477153-1 1v2.13c0 1.6568542 1.3431458 3 3 3h10c1.6568542 0 3-1.3431458 3-3v-2.14c0-.5522847-.4477153-1-1-1z"
-                    />
-                  </g>
-                </g>
-              </svg>
-            </div>
           </div>
+          <h2 id="info-title" class="info__title">Hourly Forecast</h2>
+          <ul class="info__hourly-info-box">
+            <li class="info__hourly-info">
+              <div class="info__date">
+                <span id="firstTime" class="info__date-time">00:00</span>
+              </div>
+              <ul class="info__hourly-weather-box">
+                <li class="info__hourly-values">
+                  <img
+                    class="info__weather-icon"
+                    src="images/humidity.png"
+                    alt="icon"
+                  />
+                  <span
+                    id="hourly-00-humidity"
+                    class="info__hourly-weather-kind"
+                    >humidity</span
+                  >
+                </li>
+                <li class="info__hourly-values">
+                  <img
+                    class="info__weather-icon"
+                    src="images/indicator.png"
+                    alt="icon"
+                  />
+                  <span
+                    id="hourly-00-pressure"
+                    class="info__hourly-weather-kind"
+                  >
+                    pressure</span
+                  >
+                </li>
+                <li class="info__hourly-values">
+                  <img
+                    class="info__weather-icon"
+                    src="images/wind-direction.png"
+                    alt="icon"
+                  />
+
+                  <span id="hourly-00-wdir" class="info__hourly-weather-kind"
+                    >windDirection</span
+                  >
+                </li>
+                <li class="info__hourly-values">
+                  <img
+                    class="info__weather-icon"
+                    src="images/wind.png"
+                    alt="icon"
+                  />
+                  <span id="hourly-00-wspeed" class="info__hourly-weather-kind"
+                    >windSpeed</span
+                  >
+                </li>
+              </ul>
+              <div class="info__hourly-temperature-box">
+                <h2 id="hourly-00-temperature" class="info__hourly-temperature">
+                  26&deg;
+                </h2>
+
+                <img
+                  id="hourly-00-icon"
+                  class="info__hourly-big-weather-icon"
+                  src="images/temperature.png"
+                  alt="weather-icon"
+                />
+              </div>
+            </li>
+            <li class="info__hourly-info">
+              <div class="info__date">
+                <span id="secondTime" class="info__date-time">06:00</span>
+              </div>
+              <ul class="info__hourly-weather-box">
+                <li class="info__hourly-values">
+                  <img
+                    class="info__weather-icon"
+                    src="images/humidity.png"
+                    alt="icon"
+                  />
+                  <span
+                    id="hourly-06-humidity"
+                    class="info__hourly-weather-kind"
+                    >humidity</span
+                  >
+                </li>
+                <li class="info__hourly-values">
+                  <img
+                    class="info__weather-icon"
+                    src="images/indicator.png"
+                    alt="icon"
+                  />
+                  <span
+                    id="hourly-06-pressure"
+                    class="info__hourly-weather-kind"
+                  >
+                    pressure</span
+                  >
+                </li>
+                <li class="info__hourly-values">
+                  <img
+                    class="info__weather-icon"
+                    src="images/wind-direction.png"
+                    alt="icon"
+                  />
+
+                  <span id="hourly-06-wdir" class="info__hourly-weather-kind"
+                    >windDirection</span
+                  >
+                </li>
+                <li class="info__hourly-values">
+                  <img
+                    class="info__weather-icon"
+                    src="images/wind.png"
+                    alt="icon"
+                  />
+                  <span id="hourly-06-wspeed" class="info__hourly-weather-kind"
+                    >windSpeed</span
+                  >
+                </li>
+              </ul>
+              <div class="info__hourly-temperature-box">
+                <h2 id="hourly-06-temperature" class="info__hourly-temperature">
+                  26&deg;
+                </h2>
+
+                <img
+                  id="hourly-06-icon"
+                  class="info__hourly-big-weather-icon"
+                  src="images/temperature.png"
+                  alt="weather-icon"
+                />
+              </div>
+            </li>
+            <li class="info__hourly-info">
+              <div class="info__date">
+                <span id="thirdTime" class="info__date-time">12:00</span>
+              </div>
+              <ul class="info__hourly-weather-box">
+                <li class="info__hourly-values">
+                  <img
+                    class="info__weather-icon"
+                    src="images/humidity.png"
+                    alt="icon"
+                  />
+                  <span
+                    id="hourly-12-humidity"
+                    class="info__hourly-weather-kind"
+                    >humidity</span
+                  >
+                </li>
+                <li class="info__hourly-values">
+                  <img
+                    class="info__weather-icon"
+                    src="images/indicator.png"
+                    alt="icon"
+                  />
+                  <span
+                    id="hourly-12-pressure"
+                    class="info__hourly-weather-kind"
+                  >
+                    pressure</span
+                  >
+                </li>
+                <li class="info__hourly-values">
+                  <img
+                    class="info__weather-icon"
+                    src="images/wind-direction.png"
+                    alt="icon"
+                  />
+
+                  <span id="hourly-12-wdir" class="info__hourly-weather-kind"
+                    >windDirection</span
+                  >
+                </li>
+                <li class="info__hourly-values">
+                  <img
+                    class="info__weather-icon"
+                    src="images/wind.png"
+                    alt="icon"
+                  />
+                  <span id="hourly-12-wspeed" class="info__hourly-weather-kind"
+                    >windSpeed</span
+                  >
+                </li>
+              </ul>
+              <div class="info__hourly-temperature-box">
+                <h2 id="hourly-12-temperature" class="info__hourly-temperature">
+                  26&deg;
+                </h2>
+
+                <img
+                  id="hourly-12-icon"
+                  class="info__hourly-big-weather-icon"
+                  src="images/temperature.png"
+                  alt="weather-icon"
+                />
+              </div>
+            </li>
+            <li class="info__hourly-info">
+              <div class="info__date">
+                <span id="fourthTime" class="info__date-time">18:00</span>
+              </div>
+              <ul class="info__hourly-weather-box">
+                <li class="info__hourly-values">
+                  <img
+                    class="info__weather-icon"
+                    src="images/humidity.png"
+                    alt="icon"
+                  />
+                  <span
+                    id="hourly-18-humidity"
+                    class="info__hourly-weather-kind"
+                    >humidity</span
+                  >
+                </li>
+                <li class="info__hourly-values">
+                  <img
+                    class="info__weather-icon"
+                    src="images/indicator.png"
+                    alt="icon"
+                  />
+                  <span
+                    id="hourly-18-pressure"
+                    class="info__hourly-weather-kind"
+                  >
+                    pressure</span
+                  >
+                </li>
+                <li class="info__hourly-values">
+                  <img
+                    class="info__weather-icon"
+                    src="images/wind-direction.png"
+                    alt="icon"
+                  />
+
+                  <span id="hourly-18-wdir" class="info__hourly-weather-kind"
+                    >windDirection</span
+                  >
+                </li>
+                <li class="info__hourly-values">
+                  <img
+                    class="info__weather-icon"
+                    src="images/wind.png"
+                    alt="icon"
+                  />
+                  <span id="hourly-18-wspeed" class="info__hourly-weather-kind"
+                    >windSpeed</span
+                  >
+                </li>
+              </ul>
+              <div class="info__hourly-temperature-box">
+                <h2 id="hourly-18-temperature" class="info__hourly-temperature">
+                  26&deg;
+                </h2>
+
+                <img
+                  id="hourly-18-icon"
+                  class="info__hourly-big-weather-icon"
+                  src="images/temperature.png"
+                  alt="weather-icon"
+                />
+              </div>
+            </li>
+            <li class="info__hourly-info">
+              <div class="info__date">
+                <span id="lastTime" class="info__date-time">21:00</span>
+              </div>
+              <ul class="info__hourly-weather-box">
+                <li class="info__hourly-values">
+                  <img
+                    class="info__weather-icon"
+                    src="images/humidity.png"
+                    alt="icon"
+                  />
+                  <span
+                    id="hourly-21-humidity"
+                    class="info__hourly-weather-kind"
+                    >humidity</span
+                  >
+                </li>
+                <li class="info__hourly-values">
+                  <img
+                    class="info__weather-icon"
+                    src="images/indicator.png"
+                    alt="icon"
+                  />
+                  <span
+                    id="hourly-21-pressure"
+                    class="info__hourly-weather-kind"
+                  >
+                    pressure</span
+                  >
+                </li>
+                <li class="info__hourly-values">
+                  <img
+                    class="info__weather-icon"
+                    src="images/wind-direction.png"
+                    alt="icon"
+                  />
+
+                  <span id="hourly-21-wdir" class="info__hourly-weather-kind"
+                    >windDirection</span
+                  >
+                </li>
+                <li class="info__hourly-values">
+                  <img
+                    class="info__weather-icon"
+                    src="images/wind.png"
+                    alt="icon"
+                  />
+                  <span id="hourly-21-wspeed" class="info__hourly-weather-kind"
+                    >windSpeed</span
+                  >
+                </li>
+              </ul>
+              <div class="info__hourly-temperature-box">
+                <h2 id="hourly-21-temperature" class="info__hourly-temperature">
+                  26&deg;
+                </h2>
+
+                <img
+                  id="hourly-21-icon"
+                  class="info__hourly-big-weather-icon"
+                  src="images/temperature.png"
+                  alt="weather-icon"
+                />
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
-
     <script type="module" src="js/main.js"></script>
+    <script
+      src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+      crossorigin=""
+    ></script>
   </body>
 </html>

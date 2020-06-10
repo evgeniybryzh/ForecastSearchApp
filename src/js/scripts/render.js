@@ -20,6 +20,10 @@ export const showWeatherInfo = (data) => {
   if (cityCountry == undefined) {
     $cityName.innerText = `${cityName}`;
   }
+  if (cityName == "Avtozavodskiy Rayon") {
+    $cityName.innerText = `Kremenchuk, ${cityCountry}`;
+  }
+
   $temperature.innerHTML = `${currentTemp} &deg;`;
   $weatherIconBig.setAttribute("src", icon);
   $humidityInfo.innerText = `Humidity:  ${humidity}%`;

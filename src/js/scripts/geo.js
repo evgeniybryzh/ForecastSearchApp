@@ -1,6 +1,7 @@
 "use strict";
 import { showWeatherInfo } from "./render";
 import { showWeatherHourlyInfo } from "./render";
+import { useMap } from "./map";
 export const getGeo = () => {
   function success(pos) {
     const crd = pos.coords;
@@ -12,12 +13,11 @@ export const getGeo = () => {
         .then((res) => res.json())
         .then((data) => {
           showWeatherInfo(data);
-
-          console.log(data);
+          let coords = [data.coord.lat, data.coord.lon];
+          useMap(coords);
         })
         .catch((err) => {
           console.log(err);
-          const $cityName = document.getElementById("city-name");
           $cityName.innerText = `Write City name to watch the forecast`;
         });
     };
@@ -29,7 +29,6 @@ export const getGeo = () => {
         })
         .catch((err) => {
           console.log(err);
-          const $cityName = document.getElementById("city-name");
         });
     };
     getResponse();
