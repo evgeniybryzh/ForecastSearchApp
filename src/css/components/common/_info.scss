@@ -4,7 +4,6 @@
   z-index: -1;
 
   &__details {
-    border-radius: 20px 20px 0 0;
     width: 100%;
     flex-basis: 35%;
     margin-bottom: 15px;
@@ -17,6 +16,7 @@
     padding: 10px;
     @include flex-main(column, space-between, center);
     overflow: hidden;
+    border-radius: 20px 20px 0 0;
     position: relative;
   }
   &__title-box {
@@ -69,10 +69,14 @@
     flex-basis: 5%;
     @include font($main-font, 35px, 400, $dark);
     margin-bottom: 15px;
+    text-align: center;
   }
   &__hourly-info-box {
     width: 95%;
     flex-basis: 80%;
+    @include flex-main(column, space-between, center);
+  }
+  &__forecast-box {
     @include flex-main(column, space-between, center);
   }
   &__hourly-info {
@@ -115,5 +119,38 @@
   }
   &__hourly-temperature {
     @include font($secondary-font, 40px, 600, $dark);
+  }
+  &__daily-forecast {
+    background-color: rgba(245, 245, 245, 0.4);
+    width: 100%;
+    height: 700px;
+    @include flex-main(column, space-between, center);
+    border-radius: 20px 20px 0 0;
+  }
+  &__daily-forecast-title {
+    width: 100%;
+    flex-basis: 11%;
+    background-color: rgba(245, 245, 245, 0.3);
+
+    &:nth-child(1) {
+      flex-basis: 27.5%;
+      margin-bottom: 65px;
+      background-image: linear-gradient($cover-top, $cover-bottom),
+        url("https://demo.phpmeteo.com/themes/weather/assets/images/weather/01.jpg");
+      overflow: auto;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 10px;
+      @include flex-main(column, space-between, center);
+      overflow: hidden;
+      border-radius: 20px 20px 0 0;
+    }
+    &:not(:first-of-type) {
+      width: 95%;
+    }
+    &:last-of-type {
+      margin-bottom: 10px;
+    }
   }
 }
