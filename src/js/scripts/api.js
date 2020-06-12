@@ -2,6 +2,7 @@
 import { showWeatherInfo, showWeatherHourlyInfo } from "./render";
 import { getGeo } from "./geo";
 import { useMap } from "./map";
+import { changeBGByWeather } from "./bg";
 
 export function getResponse() {
   const API_KEY = "d6e7fd6926ec77363ffce0e10bfe83b3";
@@ -29,7 +30,9 @@ export function getResponse() {
       fetch(getSearchUrl(query))
         .then((res) => res.json())
         .then((data) => {
+          console.log(data);
           showWeatherInfo(data);
+          changeBGByWeather(data);
           let coords = [data.coord.lat, data.coord.lon];
           useMap(coords);
         })
