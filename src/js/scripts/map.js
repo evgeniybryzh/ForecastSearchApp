@@ -1,9 +1,12 @@
 "use strict";
 export const useMap = (direction) => {
   let container = L.DomUtil.get("mapid");
-  if (container != null) {
-    container._leaflet_id = null;
-  }
+  container.remove();
+  const $cards = document.getElementById("cards");
+  const $mapContainer = document.createElement('div');
+  $mapContainer.id = 'mapid';
+  $mapContainer.classList.add("cards__map", "map");
+  $cards.appendChild($mapContainer);
 
   let mymap;
   mymap = L.map("mapid").setView(direction, 10);
@@ -22,4 +25,5 @@ export const useMap = (direction) => {
   ).addTo(mymap);
 
   let marker = L.marker(direction).addTo(mymap);
+
 };

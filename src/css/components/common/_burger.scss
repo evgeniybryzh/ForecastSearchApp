@@ -1,7 +1,28 @@
 .burger {
   width: 40px;
   height: 25px;
-  position: relative;
+  position: absolute;
+  right: 20px;
+  top: 16%;
+  @include media-q($phablet){
+    width: 40px;
+  height: 25px;
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  }
+  @include media-q($tablet){
+    width: 40px;
+    height: 25px;
+    position: absolute;
+    right: 80px;
+    top: 50%;
+  }
+  @include media-q($tablet-wide){
+    width: 40px;
+    height: 25px;
+    position: relative;
+  }
   cursor: pointer;
   &__item:nth-child(1) {
     position: absolute;
@@ -27,30 +48,37 @@
   }
   &__menu {
     width: 600px;
-    height: 100px;
-    @include flex-main(column, center, center);
+    height: 50px;
+    @include flex-main(column, space-between, center);
     border: 2px solid $dark;
-    border-radius: 20px;
+    border-radius: 5px;
     background-color: rgba(245, 245, 245, 0.8);
     position: absolute;
     display: none;
     right: 40px;
     top: -40px;
     z-index: 200;
+    overflow: hidden;
   }
   &__menu-title {
     @include font($main-font, 35px, 400, $dark);
+    flex-basis: 20%;
   }
   &__menu-list {
     width: 100%;
-    @include flex-main(row, space-around, center);
+    @include flex-main(row, flex-start, center);
     @include font($main-font, 25px, 400, $dark);
+    flex-wrap: wrap;
+    flex-basis: 80%;
   }
   &__menu-items {
     border: 1px solid $dark;
     padding: 5px;
     cursor: pointer;
     transition: 0.2s linear all;
+    flex-basis: 50%;
+    height: 50%;
+    @include flex-main;
     &:hover {
       background-color: $icon-color;
     }

@@ -1,10 +1,21 @@
 .cards {
   width: 100%;
-  @include flex-main(row, space-between, center);
+  @include flex-main(column, space-between, center);
+  padding: 10px;
+  @include media-q($tablet-wide){
+    width: 100%;
+    padding: 0px;
+    @include flex-main(row-reverse, space-between, center);
+  }
 
   &__info {
     flex-basis: 49%;
-    height: 700px;
+    height: auto;
     background-color: rgba(245, 245, 245, 0.4);
+    @include media-q($desktop-wide){
+      flex-basis: 49%;
+      height: 700px;
+      background-color: rgba(245, 245, 245, 0.4);
+    }
   }
 }

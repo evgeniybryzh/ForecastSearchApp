@@ -10,7 +10,7 @@ export function useBurgerMenu() {
   let topCounter = -40;
   let rightCounter = 40;
   let count = 90;
-
+  let heightCounter = 50;
   function changeVisibilityTohidden() {
     $burgerMenu.style.display = "none";
   }
@@ -20,8 +20,10 @@ export function useBurgerMenu() {
   function returnDirection() {
     topCounter = -40;
     rightCounter = 40;
+    heightCounter = 50;
     $burgerMenu.style.top = `${topCounter}px`;
     $burgerMenu.style.right = `${rightCounter}px`;
+    $burgerMenu.style.height = `${heightCounter}px`;
   }
 
   function moveTop() {
@@ -41,12 +43,15 @@ export function useBurgerMenu() {
 
   function animateMenuForward() {
     changeVisibilityToVisible();
-    if (rightCounter == 360) return true;
+    if (heightCounter == 250) return true;
     if (topCounter < 90 && rightCounter == 40) {
       $burgerMenu.style.top = `${(topCounter += 10)}px`;
     }
     if (topCounter == 90 && rightCounter < 360) {
       $burgerMenu.style.right = `${(rightCounter += 10)}px`;
+    }
+    if (heightCounter < 250 && rightCounter == 360) {
+      $burgerMenu.style.height = `${(heightCounter += 10)}px`;
     }
     setTimeout(animateMenuForward, 5);
   }

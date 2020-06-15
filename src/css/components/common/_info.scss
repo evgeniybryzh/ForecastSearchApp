@@ -5,19 +5,33 @@
 
   &__details {
     width: 100%;
-    flex-basis: 35%;
+    flex-basis:50%;
     margin-bottom: 15px;
     background-image: linear-gradient($cover-top, $cover-bottom),
       url("https://demo.phpmeteo.com/themes/weather/assets/images/weather/01.jpg");
-    overflow: auto;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     padding: 10px;
     @include flex-main(column, space-between, center);
-    overflow: hidden;
+    
     border-radius: 20px 20px 0 0;
     position: relative;
+    @include media-q($tablet){
+      width: 100%;
+      flex-basis: 35%;
+      margin-bottom: 15px;
+      background-image: linear-gradient($cover-top, $cover-bottom),
+        url("https://demo.phpmeteo.com/themes/weather/assets/images/weather/01.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 10px;
+      @include flex-main(column, space-between, center);
+      
+      border-radius: 20px 20px 0 0;
+      position: relative;
+    }
   }
   &__title-box {
     width: 100%;
@@ -39,9 +53,14 @@
     flex-basis: 66.6%;
   }
   &__values {
-    flex-basis: 50%;
+    width: 100%;
     @include flex-main(row, flex-start, center);
     padding: 5px;
+    @include media-q($phone-wide){
+      flex-basis: 50%;
+      @include flex-main(row, flex-start, center);
+      padding: 5px;
+    }
   }
   &__name {
     @include font($secondary-font, 25px, 500, $white);
