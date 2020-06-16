@@ -12,10 +12,7 @@
 </head>
 
 <body>
-  <section class="forecast">
-    <video poster="images/clouds-poster.jpg" class="forecast__video" autoplay muted loop id="video">
-      <source id="video-source" src="images/Clouds.mp4" type="video/mp4" />
-    </video>
+  <section id="forecast" class="forecast">
     <header class="header forecast__header">
       <div class="container header__container">
         <div class="icon header__icon-box">
@@ -198,7 +195,7 @@
                 26&deg;
               </h2>
 
-              <img id="hourly-00-icon" class="info__hourly-big-weather-icon" src="images/temperature.png"
+              <img id="hourly-00-icon" class="info__hourly-big-weather-icon" src="images/placeholder-icon.png"
                 alt="weather-icon" />
             </div>
           </li>
@@ -231,7 +228,7 @@
                 26&deg;
               </h2>
 
-              <img id="hourly-06-icon" class="info__hourly-big-weather-icon" src="images/temperature.png"
+              <img id="hourly-06-icon" class="info__hourly-big-weather-icon" src="images/placeholder-icon.png"
                 alt="weather-icon" />
             </div>
           </li>
@@ -264,7 +261,7 @@
                 26&deg;
               </h2>
 
-              <img id="hourly-12-icon" class="info__hourly-big-weather-icon" src="images/temperature.png"
+              <img id="hourly-12-icon" class="info__hourly-big-weather-icon" src="images/placeholder-icon.png"
                 alt="weather-icon" />
             </div>
           </li>
@@ -297,7 +294,7 @@
                 26&deg;
               </h2>
 
-              <img id="hourly-18-icon" class="info__hourly-big-weather-icon" src="images/temperature.png"
+              <img id="hourly-18-icon" class="info__hourly-big-weather-icon" src="images/placeholder-icon.png"
                 alt="weather-icon" />
             </div>
           </li>
@@ -330,13 +327,16 @@
                 26&deg;
               </h2>
 
-              <img id="hourly-21-icon" class="info__hourly-big-weather-icon" src="images/temperature.png"
+              <img id="hourly-21-icon" class="info__hourly-big-weather-icon" src="images/placeholder-icon.png"
                 alt="weather-icon" />
             </div>
           </li>
         </ul>
       </div>
     </div>
+    <video poster="images/clouds-poster.jpg" class="forecast__video" autoplay muted loop id="video">
+      <source id="video-source" src="images/Clouds.mp4" type="video/mp4" />
+    </video>
   </section>
 
   <script type="module" src="js/main.js"></script>

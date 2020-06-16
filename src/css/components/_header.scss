@@ -32,8 +32,9 @@
 width: 250px;
     @include font($main-font, 40px, 600, $dark);
     margin-right: 0px;
-    text-align: start;
-    @include media-q($phone){
+    text-align: center;
+    width: 100%;
+    @include media-q($tablet){
       flex-basis: 25%;
     @include font($main-font, 40px, 600, $dark);
     text-align: center;

@@ -1,12 +1,10 @@
 "use strict";
 import { useBurgerMenu } from "./scripts/burger";
-import { slowVideo } from "./scripts/video";
 import { changeBG } from "./scripts/bg";
 import { getResponse } from "./scripts/api";
 import { useMap } from "./scripts/map";
-
-
-slowVideo();
+import { changeBGForMobile } from "./scripts/mobile-bg";
+changeBGForMobile();
 useBurgerMenu();
 changeBG();
 getResponse();

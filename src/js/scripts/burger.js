@@ -41,13 +41,13 @@ export function useBurgerMenu() {
   }
 
   function animateMenuForward() {
-    changeVisibilityToVisible();
+    setTimeout(changeVisibilityToVisible, 60);
     if (heightCounter == 500) return true;
     if (topCounter < 90) {
       $burgerMenu.style.top = `${(topCounter += 5)}px`;
     }
     if (heightCounter < 560) {
-      $burgerMenu.style.height = `${(heightCounter += 10)}px`;
+      $burgerMenu.style.height = `${(heightCounter += 9)}px`;
     }
     setTimeout(animateMenuForward, 1);
   }
