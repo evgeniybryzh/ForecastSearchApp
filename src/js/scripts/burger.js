@@ -37,7 +37,7 @@ export function useBurgerMenu() {
   function animateMenuBack() {
     moveTop();
     setTimeout(changeVisibilityTohidden, 50);
-    setTimeout(returnDirection, 500);
+    setTimeout(returnDirection, 100);
   }
 
   function animateMenuForward() {

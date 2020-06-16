@@ -49,8 +49,7 @@
   &__menu {
     width: 200px;
     @include flex-main(column, flex-start, center);
-  
-    border-radius: 5px;
+    border-radius:50px 50px 100px 100px;
     background-color: rgba(245, 245, 245, 0.8);
     position: absolute;
     display: none;
@@ -58,6 +57,8 @@
     top: -40px;
     z-index: 200;
     overflow: hidden;
+  
+
     
   }
   &__menu-title {
@@ -66,6 +67,7 @@
     background-image: linear-gradient(to bottom, #f5bc00, #f2ca00, #edd700, #e7e500, #def300);
     border-bottom: 2px dashed $white;
     text-align: center;
+ 
   }
   &__menu-list {
     width: 100%;
@@ -75,7 +77,6 @@
     flex-basis: 80%;
   }
   &__menu-items {
-    
     padding: 5px;
     cursor: pointer;
     transition: 0.2s ease-in all;
@@ -84,9 +85,11 @@
     @include flex-main;
     border-right: 2px solid transparent;
      border-left: 2px solid transparent;
+     opacity: 0.9;
     &:hover {
      border-right: 2px solid $white;
      border-left: 2px solid $white;
+     opacity: 1;
     }
     &:nth-child(1){
       background-image: linear-gradient(to bottom, #def300, #ffb64b, #ff908a, #c287a3, #827e87);
@@ -104,5 +107,14 @@
 }
 .pushed {
   transition: 0.2s ease all;
-  transform: rotate(25deg);
+
+  &:nth-child(1){
+    width: 100%;
+  }
+  &:nth-child(2){
+    width: 75%;
+  }
+  &:nth-child(3){
+    width: 50%;
+  }
 }
