@@ -31,15 +31,16 @@ export function getResponse() {
       fetch(getSearchUrl(query))
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           showWeatherInfo(data);
+          let coords = [data.coord.lat, data.coord.lon];
+          useMap(coords);
           if (window.matchMedia("(min-width: 768px)").matches) {
             changeBGByWeather(data);
+
           } else {
             return true
           }
-          let coords = [data.coord.lat, data.coord.lon];
-          useMap(coords);
+
         })
         .catch((err) => {
           console.log(err);
