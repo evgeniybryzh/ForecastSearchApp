@@ -22,9 +22,13 @@ a {
 }
 .bg{
   background-image: url(../images/weather-bg.jpg);
-  background-attachment: fixed;
-  background-size:cover;
-  background-repeat: no-repeat;
+  background-size: cover;
+         -webkit-background-size:cover;
+         -moz-background-size:cover;
+         -o-background-size:cover;
+         background-repeat: no-repeat;
+         background-position: center;
+         background-attachment: fixed;
   position: relative;
   top: 0;
   left: 0;
