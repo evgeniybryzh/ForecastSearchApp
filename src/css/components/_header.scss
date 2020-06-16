@@ -22,7 +22,7 @@
       position: relative;
     }
     @include media-q($tablet-wide){
-      @include flex-main(row, space-between, center);
+      @include flex-main(row, center, center);
     height: 100%;
     position: relative;
     }
@@ -31,12 +31,13 @@
   &__title {
 width: 250px;
     @include font($main-font, 40px, 600, $dark);
-  
+    margin-right: 0px;
     text-align: start;
     @include media-q($phone){
       flex-basis: 25%;
     @include font($main-font, 40px, 600, $dark);
     text-align: center;
+    margin-right: 20px;
    
     }
   }

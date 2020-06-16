@@ -2,8 +2,17 @@
   width: 150px;
   height: 150px;
   position: absolute;
-  left: -200px;
+  left: -100px;
   top: 20px;
+  display: none;
+  @include media-q($tablet-wide){
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    left: -100px;
+    top: 20px;
+    display: block;
+  }
 }
 
 .sun {
