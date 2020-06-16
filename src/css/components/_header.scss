@@ -4,17 +4,21 @@
   background-color: rgba(245, 245, 245, 0.4);
   margin-bottom: 10px;
   padding: 0px 20px;
+  z-index: 1000;
+
   @include media-q($tablet-wide){
     width: 100%;
     height: 150px;
     background-color: rgba(245, 245, 245, 0.4);
     margin-bottom: 10px;
     padding: 0px 0px;
+    z-index: 1000;
   }
 
   &__container {
     @include flex-main(column, center, flex-start);
     height: 100%;
+    z-index: 1000;
     position: relative;
     @include media-q($tablet-wide){
       @include flex-main(column, center, center);
@@ -39,6 +43,7 @@ width: 250px;
     @include font($main-font, 40px, 600, $dark);
     text-align: center;
     margin-right: 20px;
+    
    
     }
   }
@@ -46,6 +51,7 @@ width: 250px;
     flex-basis: 50%;
   }
   &__burger-wrapper {
-    flex-basis: 25%;position: relative;
+    flex-basis: 25%;
+    position: relative;
   }
 }

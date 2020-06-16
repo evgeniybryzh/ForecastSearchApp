@@ -1,6 +1,6 @@
 .forecast {
   height: auto;
-  @include media-q($tablet-wide){
+  @include media-q($tablet-wide) {
     height: 100vh;
   }
   &__video {
@@ -10,21 +10,13 @@
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
-    z-index: 0;
+    z-index: -1000;
   }
-  &__bg{
+  &__bg {
     background-image: url(../images/weather-bg.jpg);
     background-size: cover;
-           -webkit-background-size:cover;
-           -moz-background-size:cover;
-           -o-background-size:cover;
-           background-repeat: no-repeat;
-           background-position: center;
-           background-attachment: fixed;
-    position: relative;
-    top: 0;
-   
-    z-index: 0;
-   
-   }
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1000;
+  }
 }
