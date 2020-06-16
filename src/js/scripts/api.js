@@ -25,6 +25,7 @@ export function getResponse() {
     return `${SECONDARY_URL}${city}&units=celsius&appid=${API_KEY}`;
   };
 
+
   const getResponse = (query) => {
     if (query) {
       fetch(getSearchUrl(query))
@@ -32,7 +33,11 @@ export function getResponse() {
         .then((data) => {
           console.log(data);
           showWeatherInfo(data);
-          changeBGByWeather(data);
+          if (window.matchMedia("(min-width: 768px)").matches) {
+            changeBGByWeather(data);
+          } else {
+            return true
+          }
           let coords = [data.coord.lat, data.coord.lon];
           useMap(coords);
         })
