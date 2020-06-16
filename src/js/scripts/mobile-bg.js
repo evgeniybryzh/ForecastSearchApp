@@ -7,6 +7,6 @@ export const changeBGForMobile = () => {
         slowVideo();
     } else {
         $forecastSection.removeChild($videoBG);
-        document.body.classList.add('bg');
+        $forecastSection.classList.add('forecast__bg');
     }
 }
