@@ -5,7 +5,7 @@
   @include media-q($tablet-wide){
     width: 100%;
     padding: 0px;
-    @include flex-main(row-reverse, space-between, center);
+    @include flex-main(row, space-between, center);
   }
 
   &__info {

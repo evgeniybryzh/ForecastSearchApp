@@ -38,12 +38,12 @@
     width: 80px;
     height: 80px;
     @include flex-main;
-    background-color: $icon-color;
+    background-color: $search-button-bg-color;
     border-radius: 0 10px 10px 0;
     cursor: pointer;
     transition: 0.2s linear all;
     &:hover {
-      background-color: $icon-hover-color;
+      background-color: $search-button-bg-hover-color;
     }
   }
   &__icon {

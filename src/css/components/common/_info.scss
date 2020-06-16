@@ -7,7 +7,7 @@
     width: 100%;
     flex-basis:50%;
     margin-bottom: 15px;
-    background-image: linear-gradient($cover-top, $cover-bottom),
+    background-image: linear-gradient(to bottom, #ffc400, #ff9436, #ff5a73, #ff32b9, #eb53ff),
       url("https://demo.phpmeteo.com/themes/weather/assets/images/weather/01.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -21,7 +21,7 @@
       width: 100%;
       flex-basis: 35%;
       margin-bottom: 15px;
-      background-image: linear-gradient($cover-top, $cover-bottom),
+      background-image:linear-gradient(to bottom, #ffc400, #ff9436, #ff5a73, #ff32b9, #eb53ff),
         url("https://demo.phpmeteo.com/themes/weather/assets/images/weather/01.jpg");
       background-position: center;
       background-repeat: no-repeat;
@@ -38,19 +38,37 @@
     flex-basis: 50%;
   }
   &__weather-details {
-    @include flex-main(row, space-between, center);
+    @include flex-main(column, space-between, center);
     flex-wrap: nowrap;
     width: 100%;
+    @include media-q($phone-wide){
+      @include flex-main(row, space-between, center);
+    flex-wrap: nowrap;
+    width: 100%;
+    }
   }
   &__temperature-box {
-    @include flex-main(row, flex-start, center);
-    flex-basis: 33.3%;
+    @include flex-main(column, flex-start, center);
+    flex-basis: 60%;
+    @include media-q($phone-wide){
+      @include flex-main(column, flex-start, center);
+      flex-basis: 33.3%;
+    }
+    @include media-q($desktop-wide){
+      @include flex-main(row, flex-start, center);
+      flex-basis: 33.3%;
+    }
   }
 
   &__weather-box {
-    @include flex-main(row, space-between, center);
+    @include flex-main(column, center, center);
     flex-wrap: wrap;
-    flex-basis: 66.6%;
+    flex-basis: 100%;
+    @include media-q($phone-wide){
+      @include flex-main(row, space-between, center);
+      flex-wrap: wrap;
+      flex-basis: 66.6%;
+    }
   }
   &__values {
     width: 100%;
@@ -61,34 +79,63 @@
       @include flex-main(row, flex-start, center);
       padding: 5px;
     }
+
   }
   &__name {
     @include font($secondary-font, 25px, 500, $white);
   }
   &__main-title {
-    @include font($main-font, 35px, 500, $white);
-  }
+    @include font($main-font, 60px, 500, $white);
+    
+    @include media-q($tablet-wide){
+      @include font($main-font, 35px, 500, $white);
+      font-size: 4vw;
+    }}
   &__temperature {
-    @include font($secondary-font, 80px, 500, $white);
+    @include font($secondary-font, 120px, 500, $white);
+    
+    @include media-q($tablet){
+      @include font($secondary-font, 80px, 500, $white);
+      font-size: 8vw;
+    }
+    @include media-q($tablet-wide){
+      @include font($secondary-font, 80px, 500, $white);
+      font-size: 4vw;
+    }
   }
   &__weather-icon {
     margin-right: 10px;
-    width: 25px;
-    height: 25px;
+    width: 50px;
+    height: 50px;
+    @include media-q($tablet-wide){
+      margin-right: 10px;
+      width: 25px;
+      height: 25px;
+    }
   }
   &__big-weather-icon {
     width: 88px;
     height: 90px;
   }
   &__weather-kind {
-    @include font($secondary-font, 20px, 600, $white);
+    @include font($secondary-font, 35px, 600, $white);
+    @include media-q($tablet-wide){
+      @include font($secondary-font, 20px, 600, $white);
+    }
   }
   &__title {
     width: 95%;
     flex-basis: 5%;
-    @include font($main-font, 35px, 400, $dark);
+    @include font($main-font, 90px, 400, $dark);
     margin-bottom: 15px;
     text-align: center;
+    @include media-q($tablet-wide){
+      width: 95%;
+      flex-basis: 5%;
+      @include font($main-font, 35px, 400, $dark);
+      margin-bottom: 15px;
+      text-align: center;
+    }
   }
   &__hourly-info-box {
     width: 95%;
@@ -103,8 +150,16 @@
     flex-basis: 20%;
     margin-bottom: 10px;
     background-color: rgba(245, 245, 245, 0.3);
-    @include flex-main(row, space-between, center);
+    @include flex-main(column, center, center);
     padding: 5px 15px 5px 15px;
+    @include media-q($tablet-wide){
+      width: 100%;
+      flex-basis: 20%;
+      margin-bottom: 10px;
+      background-color: rgba(245, 245, 245, 0.3);
+      @include flex-main(row, space-between, center);
+      padding: 5px 15px 5px 15px;
+    }
   }
   &__date {
     flex-basis: 11%;
@@ -113,30 +168,61 @@
     flex-basis: 70%;
     @include flex-main(row, space-between, center);
     flex-wrap: wrap;
+    
   }
   &__hourly-temperature-box {
-    flex-basis: 19%;
-    @include flex-main;
+    flex-basis: 29%;
+    @include flex-main(column,center,center);
+    @include media-q($tablet-wide){
+      flex-basis: 19%;
+      @include flex-main;
+    }
   }
   &__hourly-values {
     flex-basis: 50%;
-    @include flex-main(row, flex-start, center);
+   
+    @include flex-main(row, center, center);
+    @include media-q($tablet){
+      @include flex-main(row, flex-start, center);
+    }
     &:nth-child(1),
     &:nth-child(2) {
       margin-bottom: 5px;
     }
   }
   &__hourly-big-weather-icon {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
+    @include media-q($tablet-wide){
+      width: 50px;
+      height: 50px;
+    }
   }
   &__date-time {
-    @include font($secondary-font, 15px, 600, $dark);
+    @include font($secondary-font, 25px, 600, $dark);
+    @include media-q($phone-wide){
+      @include font($secondary-font, 55px, 600, $dark);
+    }
+    @include media-q($tablet-wide){
+      @include font($secondary-font, 15px, 600, $dark);
+    }
   }
   &__hourly-weather-kind {
     @include font($secondary-font, 15px, 600, $dark);
+    @include media-q($phone-wide){
+      @include font($secondary-font, 45px, 600, $dark);
+    }
+    @include media-q($tablet-wide){
+      @include font($secondary-font, 15px, 600, $dark);
+    }
   }
   &__hourly-temperature {
-    @include font($secondary-font, 40px, 600, $dark);
+    @include font($secondary-font, 60px, 600, $dark);
+    @include media-q($phone-wide){
+      @include font($secondary-font, 120px, 600, $dark);
+    }
+    @include media-q($tablet-wide){
+      @include font($secondary-font, 40px, 600, $dark);
+    }
   }
 }

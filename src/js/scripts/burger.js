@@ -7,8 +7,9 @@ export function useBurgerMenu() {
   const $secondStripe = document.getElementById("second-stripe");
   const $thirdStripe = document.getElementById("third-stripe");
   const $burgerMenuListItems = document.getElementById("menu-list");
+
   let topCounter = -40;
-  let rightCounter = 40;
+
   let count = 90;
   let heightCounter = 50;
   function changeVisibilityTohidden() {
@@ -19,10 +20,8 @@ export function useBurgerMenu() {
   }
   function returnDirection() {
     topCounter = -40;
-    rightCounter = 40;
     heightCounter = 50;
     $burgerMenu.style.top = `${topCounter}px`;
-    $burgerMenu.style.right = `${rightCounter}px`;
     $burgerMenu.style.height = `${heightCounter}px`;
   }
 
@@ -43,17 +42,14 @@ export function useBurgerMenu() {
 
   function animateMenuForward() {
     changeVisibilityToVisible();
-    if (heightCounter == 250) return true;
-    if (topCounter < 90 && rightCounter == 40) {
-      $burgerMenu.style.top = `${(topCounter += 10)}px`;
+    if (heightCounter == 500) return true;
+    if (topCounter < 90) {
+      $burgerMenu.style.top = `${(topCounter += 5)}px`;
     }
-    if (topCounter == 90 && rightCounter < 360) {
-      $burgerMenu.style.right = `${(rightCounter += 10)}px`;
-    }
-    if (heightCounter < 250 && rightCounter == 360) {
+    if (heightCounter < 560) {
       $burgerMenu.style.height = `${(heightCounter += 10)}px`;
     }
-    setTimeout(animateMenuForward, 5);
+    setTimeout(animateMenuForward, 1);
   }
 
   function removeStripesChanges() {
@@ -96,4 +92,5 @@ export function useBurgerMenu() {
     });
   };
   useBurger();
+
 }

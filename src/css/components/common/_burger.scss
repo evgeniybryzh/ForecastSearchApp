@@ -47,10 +47,9 @@
     background-color: black;
   }
   &__menu {
-    width: 600px;
-    height: 50px;
-    @include flex-main(column, space-between, center);
-    border: 2px solid $dark;
+    width: 200px;
+    @include flex-main(column, flex-start, center);
+  
     border-radius: 5px;
     background-color: rgba(245, 245, 245, 0.8);
     position: absolute;
@@ -59,10 +58,14 @@
     top: -40px;
     z-index: 200;
     overflow: hidden;
+    
   }
   &__menu-title {
     @include font($main-font, 35px, 400, $dark);
     flex-basis: 20%;
+    background-image: linear-gradient(to bottom, #f5bc00, #f2ca00, #edd700, #e7e500, #def300);
+    border-bottom: 2px dashed $white;
+    text-align: center;
   }
   &__menu-list {
     width: 100%;
@@ -72,15 +75,30 @@
     flex-basis: 80%;
   }
   &__menu-items {
-    border: 1px solid $dark;
+    
     padding: 5px;
     cursor: pointer;
-    transition: 0.2s linear all;
-    flex-basis: 50%;
-    height: 50%;
+    transition: 0.2s ease-in all;
+    flex-basis: 100%;
+    height: 25%;
     @include flex-main;
+    border-right: 2px solid transparent;
+     border-left: 2px solid transparent;
     &:hover {
-      background-color: $icon-color;
+     border-right: 2px solid $white;
+     border-left: 2px solid $white;
+    }
+    &:nth-child(1){
+      background-image: linear-gradient(to bottom, #def300, #ffb64b, #ff908a, #c287a3, #827e87);
+    }
+    &:nth-child(2){
+      background-image: linear-gradient(to bottom, #827e87, #9a989f, #b4b2b7, #cecdd0, #e9e9e9);
+    }
+    &:nth-child(3){
+      background-image: linear-gradient(to bottom, #e9e9e9, #d8e0f4, #b6dcfe, #7edaff, #00d9f5);
+    }
+    &:nth-child(4){
+      background-image: linear-gradient(to bottom, #00d9f5, #00e9df, #00f4ae, #86f86b, #def300);
     }
   }
 }
