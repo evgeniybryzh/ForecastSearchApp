@@ -4,8 +4,9 @@ import { changeBG } from "./scripts/bg";
 import { getResponse } from "./scripts/api";
 import { useMap } from "./scripts/map";
 import { changeBGForMobile } from "./scripts/mobile-bg";
+import { useAutocomplete } from "./scripts/autocomplete";
 changeBGForMobile();
 useBurgerMenu();
 changeBG();
 getResponse();
-
+useAutocomplete();

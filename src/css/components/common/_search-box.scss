@@ -1,9 +1,9 @@
 .search-box {
   @include flex-main(row, flex-start, center);
   margin-right: 0px;
-  @include media-q($phone-wide){
+  @include media-q($phone-wide) {
     @include flex-main(row, flex-start, center);
-    margin-right: 80px;
+    margin-right: 150px;
   }
 
   &__input {
@@ -13,17 +13,17 @@
     border: 1px solid $grey;
     border-radius: 10px 0 0 10px;
     padding-left: 10px;
-    @include media-q($phablet){
-      width: 70%;
+    @include media-q($phablet) {
       height: 80px;
       @include font($main-font, 40px, 500, $dark);
       border: 1px solid $grey;
       border-radius: 10px 0 0 10px;
       padding-left: 10px;
     }
-    @include media-q($tablet-small){
+    @include media-q($tablet-small) {
       flex-basis: 80%;
       height: 80px;
+
       @include font($main-font, 40px, 500, $dark);
       border: 1px solid $grey;
       border-radius: 10px 0 0 10px;
