@@ -4,6 +4,7 @@
   z-index: 1;
   width: 100%;
   &__details {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     width: 100%;
     flex-basis: 50%;
     margin-bottom: 15px;
@@ -30,17 +31,18 @@
       flex-basis: 35%;
       margin-bottom: 15px;
       background-image: linear-gradient(
-          to bottom,
-          #ffc400,
-          #ff9436,
-          #ff5a73,
-          #ff32b9,
-          #eb53ff
-        ),
-        url("https://demo.phpmeteo.com/themes/weather/assets/images/weather/01.jpg");
+        to right,
+        #ffa002,
+        #ff7d48,
+        #ff5f80,
+        #ff59b9,
+        #e96ded
+      );
+      background-size: 300% 300%;
+      animation: gradient 5s ease infinite alternate;
       background-position: center;
       background-repeat: no-repeat;
-      background-size: cover;
+
       padding: 10px;
       @include flex-main(column, space-between, center);
 
@@ -141,9 +143,10 @@
   &__title {
     width: 95%;
     flex-basis: 5%;
-    @include font($main-font, 60px, 400, $dark);
+    @include font($main-font, 60px, 600, $dark);
     margin-bottom: 15px;
     text-align: center;
+    text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.7);
     @include media-q($tablet-wide) {
       width: 95%;
       flex-basis: 5%;
@@ -164,15 +167,19 @@
     width: 100%;
     flex-basis: 20%;
     margin-bottom: 10px;
-    background-color: rgba(253, 253, 220, 0.5);
+
     @include flex-main(column, center, center);
+    background-color: rgba(245, 245, 245, 0.3);
     padding: 5px 15px 5px 15px;
     border-radius: 10px;
+    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5),
+      1px 1px 5px rgba(255, 255, 255, 1);
+
     @include media-q($tablet-wide) {
       width: 100%;
       flex-basis: 20%;
       margin-bottom: 10px;
-      background-color: rgba(253, 253, 220, 0.5);
+
       @include flex-main(row, space-between, center);
       padding: 5px 15px 5px 15px;
     }

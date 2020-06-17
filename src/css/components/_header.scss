@@ -6,7 +6,7 @@
   padding: 0px 20px;
   z-index: 1000;
 
-  @include media-q($tablet-wide){
+  @include media-q($tablet-wide) {
     width: 100%;
     height: 150px;
     background-color: rgba(245, 245, 245, 0.4);
@@ -20,33 +20,18 @@
     height: 100%;
     z-index: 1000;
     position: relative;
-    @include media-q($tablet-wide){
+    @include media-q($tablet-wide) {
       @include flex-main(column, center, center);
       height: 100%;
       position: relative;
     }
-    @include media-q($tablet-wide){
+    @include media-q($tablet-wide) {
       @include flex-main(row, center, center);
-    height: 100%;
-    position: relative;
+      height: 100%;
+      position: relative;
     }
   }
 
-  &__title {
-width: 250px;
-    @include font($main-font, 40px, 600, $dark);
-    margin-right: 0px;
-    text-align: center;
-    width: 100%;
-    @include media-q($tablet){
-      flex-basis: 25%;
-    @include font($main-font, 40px, 600, $dark);
-    text-align: center;
-    margin-right: 20px;
-    
-   
-    }
-  }
   &__search-box {
     flex-basis: 50%;
   }

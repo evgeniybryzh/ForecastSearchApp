@@ -13,10 +13,16 @@
     z-index: -1000;
   }
   &__bg {
-    background-image: url(../images/weather-bg.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-image: linear-gradient(
+      to right,
+      #ffa002,
+      #ff7d48,
+      #ff5f80,
+      #ff59b9,
+      #e96ded
+    );
+    background-size: 300% 300%;
+    animation: gradient 3s ease infinite alternate;
     z-index: -1000;
   }
 }
