@@ -25,7 +25,6 @@ export function getResponse() {
     return `${SECONDARY_URL}${city}&units=celsius&appid=${API_KEY}`;
   };
 
-
   const getResponse = (query) => {
     if (query) {
       fetch(getSearchUrl(query))
@@ -36,11 +35,9 @@ export function getResponse() {
           useMap(coords);
           if (window.matchMedia("(min-width: 768px)").matches) {
             changeBGByWeather(data);
-
           } else {
-            return true
+            return true;
           }
-
         })
         .catch((err) => {
           console.log(err);

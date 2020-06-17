@@ -13,16 +13,10 @@
     z-index: -1000;
   }
   &__bg {
-    background-image: linear-gradient(
-      to right,
-      #ffa002,
-      #ff7d48,
-      #ff5f80,
-      #ff59b9,
-      #e96ded
-    );
-    background-size: 300% 300%;
-    animation: gradient 3s ease infinite alternate;
+    background-image: url(../images/mbg6.jpg);
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
     z-index: -1000;
   }
 }

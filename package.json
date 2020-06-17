@@ -52,6 +52,7 @@
     "through2": "^3.0.1"
   },
   "dependencies": {
-    "@glidejs/glide": "^3.4.1"
+    "@glidejs/glide": "^3.4.1",
+    "wow.js": "^1.2.2"
   }
 }
