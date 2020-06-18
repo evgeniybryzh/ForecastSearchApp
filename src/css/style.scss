@@ -14,24 +14,13 @@
 @import "./src/css/components/common/map";
 @import "./src/css/components/common/preloader";
 @import "./src/css/components/common/preloader-animation";
-@import "./src/css/components/common/logo";
+
 // Components
 @import "./src/css/components/header";
 @import "./src/css/components/footer";
 @import "./src/css/components/forecast";
 @import "./src/css/components/cards";
 
-@keyframes scatter {
-  0% {
-    top: 0;
-  }
-  50% {
-    top: -5px;
-  }
-  100% {
-    top: 0;
-  }
-}
 @keyframes gradient {
   0% {
     background-position: 0% 50%;

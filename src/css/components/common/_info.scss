@@ -41,12 +41,14 @@
       animation: gradient 5s ease infinite alternate;
       background-position: center;
       background-repeat: no-repeat;
-
       padding: 10px;
       @include flex-main(column, space-between, center);
 
-      border-radius: 20px 20px 0 0;
       position: relative;
+
+      border-radius: 10px;
+      box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.6),
+        1px 1px 5px rgba(255, 255, 255, 1);
     }
   }
   &__title-box {
@@ -142,14 +144,14 @@
   &__title {
     width: 95%;
     flex-basis: 5%;
-    @include font($main-font, 60px, 600, $dark);
+    @include font($secondary-font, 60px, 600, $dark);
     margin-bottom: 15px;
     text-align: center;
-    text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.7);
+    text-shadow: 0px 0px 6px $dark;
     @include media-q($tablet-wide) {
       width: 95%;
       flex-basis: 5%;
-      @include font($main-font, 35px, 400, $dark);
+      @include font($secondary-font, 35px, 400, $dark);
       margin-bottom: 10px;
       text-align: center;
     }
@@ -169,10 +171,9 @@
     &:hover {
       background-color: rgba(245, 245, 245, 0.3);
     }
-
     @include flex-main(column, center, center);
     cursor: context-menu;
-    background-color: rgba(245, 245, 245, 0.3);
+    background-color: rgba(191, 191, 191, 0.1);
     padding: 5px 15px 5px 15px;
     border-radius: 10px;
     box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5),
