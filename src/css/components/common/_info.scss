@@ -16,8 +16,7 @@
       #ff59b9,
       #e96ded
     );
-    background-size: 300% 300%;
-    animation: gradient 5s ease infinite alternate;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     padding: 10px;
