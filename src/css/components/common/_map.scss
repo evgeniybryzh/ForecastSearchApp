@@ -1,12 +1,22 @@
 .map {
   width: 100%;
-  height: 600px;
+  height: 400px;
   z-index: 1;
   border-radius: 0px 0px 0 0;
   padding: 10px;
   opacity: 0.9;
   box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5),
     1px 1px 5px rgba(255, 255, 255, 1);
+  @include media-q($phone-wide) {
+    width: 100%;
+    height: 600px;
+    z-index: 1;
+    border-radius: 0px 0px 0 0;
+    padding: 10px;
+    opacity: 0.9;
+    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5);
+  }
+
   @include media-q($tablet-wide) {
     width: 49%;
     height: 900px;
