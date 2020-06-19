@@ -2,6 +2,7 @@
 import { showWeatherInfo } from "./render";
 import { showWeatherHourlyInfo } from "./render";
 import { useMap } from "./map";
+import { changeBGByWeather } from "./bg";
 export const getGeo = () => {
   function success(pos) {
     const crd = pos.coords;
@@ -15,6 +16,7 @@ export const getGeo = () => {
           showWeatherInfo(data);
           let coords = [data.coord.lat, data.coord.lon];
           useMap(coords);
+          changeBGByWeather(data);
         })
         .catch((err) => {
           console.log(err);
