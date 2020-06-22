@@ -29,7 +29,8 @@
       // border: 1px solid $grey;
       border-radius: 10px 0 0 10px;
       padding-left: 10px;
-      border: none;
+      border: 1px solid $grey;
+      border-right: none;
     }
     &::placeholder {
       @include font($secondary-font, 30px, 300, $light);
@@ -45,9 +46,10 @@
     border-radius: 0 10px 10px 0;
     cursor: pointer;
     transition: 0.3s linear all;
-    border-left: 2px solid white;
+    border: 1px solid $grey;
+    border-left: 1px solid white;
     &:hover {
-      border-left: 2px solid $grey;
+      border-left: 1px solid $grey;
     }
   }
   &__icon {

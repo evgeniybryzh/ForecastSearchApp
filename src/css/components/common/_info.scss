@@ -222,7 +222,7 @@
       @include font($secondary-font, 55px, 600, $white);
     }
     @include media-q($tablet-wide) {
-      @include font($secondary-font, 17px, 600, $white);
+      @include font($secondary-font, 15px, 600, $white);
       text-shadow: 0px 0px 11px $footer-black;
     }
   }
@@ -232,7 +232,7 @@
       @include font($secondary-font, 45px, 600, $white);
     }
     @include media-q($tablet-wide) {
-      @include font($secondary-font, 17px, 600, $white);
+      @include font($secondary-font, 15px, 600, $white);
       text-shadow: 0px 0px 11px $footer-black;
     }
   }
@@ -244,7 +244,7 @@
       padding-left: 100px;
     }
     @include media-q($tablet-wide) {
-      @include font($secondary-font, 42px, 600, $white);
+      @include font($secondary-font, 30px, 600, $white);
       text-shadow: 0px 0px 11px $footer-black;
       padding-left: 0px;
     }
