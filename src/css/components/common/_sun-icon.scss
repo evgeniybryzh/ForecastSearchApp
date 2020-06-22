@@ -5,7 +5,7 @@
   left: -100px;
   top: 20px;
   display: none;
-  @include media-q($tablet-wide) {
+  @include media-q(1630px) {
     width: 150px;
     height: 150px;
     position: absolute;

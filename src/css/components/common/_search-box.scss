@@ -13,14 +13,16 @@
     // border: 1px solid $grey;
     border-radius: 10px 0 0 10px;
     padding-left: 10px;
-    border: none;
+    border: 1px solid $grey;
+    border-right: none;
     @include media-q($phablet) {
       height: 80px;
       @include font($main-font, 40px, 500, $dark);
       // border: 1px solid $grey;
       border-radius: 10px 0 0 10px;
       padding-left: 10px;
-      border: none;
+      border: 1px solid $grey;
+      border-right: none;
     }
     @include media-q($tablet-small) {
       flex-basis: 80%;

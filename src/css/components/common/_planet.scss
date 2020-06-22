@@ -5,6 +5,9 @@
   padding-bottom: 30px;
   @include flex-main(column, flex-start, center);
   @include media-q($tablet) {
+    background-image: none;
+  }
+  @include media-q($tablet-wide) {
     height: 100vh;
     width: 100%;
     padding-bottom: 50px;
