@@ -4,11 +4,11 @@
   top: 0;
   right: 0;
   bottom: 0;
-
   z-index: 9999;
+  height: 100vh;
 }
 .loaded_hiding .preloader {
-  transition: 0.3s opacity;
+  transition: 0.5s opacity;
   opacity: 0;
 }
 

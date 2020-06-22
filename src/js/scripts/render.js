@@ -16,6 +16,7 @@ export const showWeatherInfo = (data) => {
   const windSpeed = data.wind.speed;
   const $weatherIconBig = document.getElementById("weather-icon-big");
   const icon = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+  $cityName.style.color = "white";
   $cityName.innerText = `${cityName}, ${cityCountry}`;
   if (cityCountry == undefined) {
     $cityName.innerText = `${cityName}`;

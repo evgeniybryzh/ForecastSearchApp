@@ -3,7 +3,6 @@ import { showWeatherInfo, showWeatherHourlyInfo } from "./render";
 import { getGeo } from "./geo";
 import { useMap } from "./map";
 import { changeBGByWeather } from "./bg";
-
 export function getResponse() {
   const API_KEY = "d6e7fd6926ec77363ffce0e10bfe83b3";
   const BASE_URL = `https://api.openweathermap.org/data/2.5/weather?q=`;
@@ -42,7 +41,8 @@ export function getResponse() {
         .catch((err) => {
           console.log(err);
           const $cityName = document.getElementById("city-name");
-          $cityName.innerText = `"${query}" - is wrong City name!`;
+          $cityName.innerText = "Sorry, try other city";
+          $cityName.style.color = "red";
         });
     }
   };
@@ -62,6 +62,12 @@ export function getResponse() {
 
   document.addEventListener("click", (event) => {
     if (event.target == $searchButton || event.target == $searchIcon) {
+      getResponse($input.value.toLowerCase());
+      getResponseForDays($input.value.toLowerCase());
+    }
+    const $autoCompleteName = document.querySelectorAll(".ap-name");
+
+    if ($autoCompleteName) {
       getResponse($input.value.toLowerCase());
       getResponseForDays($input.value.toLowerCase());
     }
