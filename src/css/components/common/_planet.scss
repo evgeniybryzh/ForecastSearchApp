@@ -4,7 +4,7 @@
   background-image: url(../images/mbg6.jpg);
   padding-bottom: 30px;
   @include flex-main(column, flex-start, center);
-  @include media-q($tablet-wide) {
+  @include media-q($tablet) {
     height: 100vh;
     width: 100%;
     padding-bottom: 50px;
@@ -15,26 +15,40 @@
     width: 100%;
     height: 200px;
     @include flex-main;
-    background-color: rgba(171, 183, 183, 0.6);
-    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.2),
-      1px 1px 5px rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5),
+      1px 1px 5px rgba(255, 255, 255, 1);
     @include font($main-font, 50px, 600, $white-smoke);
     text-align: center;
-    text-shadow: 2px 2px 15px $dark;
+    text-shadow: 2px 2px 25px $dark;
     margin-bottom: 20px;
-    border-radius: 10px;
+    border-radius: 5px;
     @include media-q($tablet) {
+      width: 50%;
+      height: 150px;
+      @include flex-main;
+      background-color: rgba(255, 255, 255, 0.2);
+      box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5),
+        1px 1px 5px rgba(255, 255, 255, 1);
+      @include font($main-font, 50px, 600, $white-smoke);
+      text-align: center;
+      text-shadow: 2px 2px 25px $dark;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+    @include media-q($tablet-wide) {
       width: 50%;
       height: 200px;
       @include flex-main;
-      background-color: rgba(171, 183, 183, 0.6);
-      box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.2),
-        1px 1px 5px rgba(255, 255, 255, 0.6);
-      @include font($secondary-font, 60px, 600, $white-smoke);
+      background-color: rgba(255, 255, 255, 0.2);
+      box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5),
+        1px 1px 5px rgba(255, 255, 255, 1);
+      @include font($main-font, 60px, 600, $white-smoke);
       text-align: center;
-      text-shadow: 2px 2px 20px $dark;
+      text-shadow: 2px 2px 25px $dark;
+
       margin-bottom: 20px;
-      border-radius: 10px;
+      border-radius: 5px;
     }
   }
   &__frame-container {

@@ -1,54 +1,30 @@
 .info {
   @include flex-main(column, flex-start, center);
-  border-radius: 20px 20px 0 0;
+  border-radius: 10px 10px 0 0;
   z-index: 1;
   width: 100%;
   &__details {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     width: 100%;
     flex-basis: 50%;
     margin-bottom: 15px;
-    background-image: linear-gradient(
-      to right,
-      #ffa002,
-      #ff7d48,
-      #ff5f80,
-      #ff59b9,
-      #e96ded
-    );
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
     padding: 10px;
     opacity: 0.8;
     @include flex-main(column, space-between, center);
-
     border-radius: 20px 20px 0 0;
     position: relative;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 0 0 2px white, 0 0 0 4px rgba(154, 147, 140, 0.5);
+    background-color: rgba(255, 255, 255, 0.2);
     @include media-q($tablet) {
       width: 100%;
       flex-basis: 35%;
       margin-bottom: 15px;
-      background-image: linear-gradient(
-        to right,
-        #ffa002,
-        #ff7d48,
-        #ff5f80,
-        #ff59b9,
-        #e96ded
-      );
-      background-size: 300% 300%;
-      animation: gradient 5s ease infinite alternate;
-      background-position: center;
-      background-repeat: no-repeat;
       padding: 10px;
       @include flex-main(column, space-between, center);
-
       position: relative;
-
-      border-radius: 10px;
-      box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.6),
-        1px 1px 5px rgba(255, 255, 255, 1);
+      border-radius: 10px 10px 0 0;
+      box-shadow: 0 0 0 2px white, 0 0 0 4px rgba(154, 147, 140, 0.5);
+      background-color: rgba(255, 255, 255, 0.2);
     }
   }
   &__title-box {
@@ -100,13 +76,15 @@
   }
   &__name {
     @include font($secondary-font, 25px, 500, $white);
+    text-shadow: 0px 0px 11px $footer-black;
   }
   &__main-title {
     @include font($main-font, 40px, 500, $white);
-
+    text-shadow: 0px 0px 11px $footer-black;
     @include media-q($tablet-wide) {
       @include font($main-font, 35px, 500, $white);
       font-size: 3.5vw;
+      line-height: 60px;
     }
   }
   &__temperature {
@@ -114,6 +92,7 @@
 
     @include media-q($tablet) {
       @include font($secondary-font, 80px, 500, $white);
+      text-shadow: 0px 5px 20px $footer-black;
       font-size: 8vw;
     }
     @include media-q($tablet-wide) {
@@ -127,7 +106,7 @@
     height: 50px;
     @include media-q($tablet-wide) {
       margin-right: 10px;
-      width: 25px;
+      width: 35px;
       height: 25px;
     }
   }
@@ -139,25 +118,28 @@
     @include font($secondary-font, 35px, 600, $white);
     @include media-q($tablet-wide) {
       @include font($secondary-font, 20px, 600, $white);
+      text-shadow: 0px 5px 20px $footer-black;
     }
   }
   &__title {
     width: 95%;
     flex-basis: 5%;
-    @include font($secondary-font, 60px, 600, $dark);
+    @include font($main-font, 60px, 600, $white-smoke);
     margin-bottom: 15px;
     text-align: center;
     text-shadow: 0px 0px 6px $dark;
     @include media-q($tablet-wide) {
       width: 95%;
       flex-basis: 5%;
-      @include font($secondary-font, 35px, 400, $dark);
-      margin-bottom: 10px;
+      @include font($main-font, 40px, 600, $white-smoke);
       text-align: center;
+      text-shadow: 2px 2px 25px $dark;
+      line-height: 35px;
+      margin-bottom: 10px;
     }
   }
   &__hourly-info-box {
-    width: 95%;
+    width: 100%;
     flex-basis: 80%;
     @include flex-main(column, space-between, center);
   }
@@ -168,28 +150,23 @@
     width: 100%;
     flex-basis: 20%;
     margin-bottom: 10px;
-    &:hover {
-      background-color: rgba(245, 245, 245, 0.3);
-    }
     @include flex-main(column, center, center);
     cursor: context-menu;
-    background-color: rgba(191, 191, 191, 0.1);
+    box-shadow: 0 0 0 2px white, 0 0 0 4px rgba(154, 147, 140, 0.5);
+    background-color: rgba(255, 255, 255, 0.2);
     padding: 5px 15px 5px 15px;
     border-radius: 10px;
-    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5),
-      1px 1px 5px rgba(255, 255, 255, 1);
     transition: 0.3s ease all;
+    text-shadow: 0px 0px 5px $white;
 
     @include media-q($tablet-wide) {
       width: 100%;
       flex-basis: 20%;
       margin-bottom: 10px;
-
+      box-shadow: 0 0 0 2px white, 0 0 0 4px rgba(154, 147, 140, 0.5);
+      background-color: rgba(255, 255, 255, 0.2);
       @include flex-main(row, space-between, center);
       padding: 5px 15px 5px 15px;
-      &:hover {
-        background-color: rgba(245, 245, 245, 0.8);
-      }
     }
   }
   &__date {
@@ -239,33 +216,36 @@
     }
   }
   &__date-time {
-    @include font($secondary-font, 25px, 600, $dark);
+    @include font($secondary-font, 25px, 600, $white);
 
     @include media-q($phone-wide) {
-      @include font($secondary-font, 55px, 600, $dark);
+      @include font($secondary-font, 55px, 600, $white);
     }
     @include media-q($tablet-wide) {
-      @include font($secondary-font, 15px, 600, $dark);
+      @include font($secondary-font, 17px, 600, $white);
+      text-shadow: 0px 0px 11px $footer-black;
     }
   }
   &__hourly-weather-kind {
-    @include font($secondary-font, 15px, 600, $dark);
+    @include font($secondary-font, 15px, 600, $white);
     @include media-q($phone-wide) {
-      @include font($secondary-font, 45px, 600, $dark);
+      @include font($secondary-font, 45px, 600, $white);
     }
     @include media-q($tablet-wide) {
-      @include font($secondary-font, 15px, 600, $dark);
+      @include font($secondary-font, 17px, 600, $white);
+      text-shadow: 0px 0px 11px $footer-black;
     }
   }
   &__hourly-temperature {
     padding-left: 50px;
-    @include font($secondary-font, 60px, 600, $dark);
+    @include font($secondary-font, 60px, 600, $white);
     @include media-q($phone-wide) {
-      @include font($secondary-font, 120px, 600, $dark);
+      @include font($secondary-font, 120px, 600, $white);
       padding-left: 100px;
     }
     @include media-q($tablet-wide) {
-      @include font($secondary-font, 40px, 600, $dark);
+      @include font($secondary-font, 42px, 600, $white);
+      text-shadow: 0px 0px 11px $footer-black;
       padding-left: 0px;
     }
   }

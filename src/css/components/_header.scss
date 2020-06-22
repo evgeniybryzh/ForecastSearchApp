@@ -1,7 +1,7 @@
 .header {
   width: 100%;
   height: 250px;
-  background-color: rgba(171, 183, 183, 0.6);
+  background-color: rgba(171, 183, 183, 0.4);
   margin-bottom: 10px;
   padding: 0px 20px;
   z-index: 1000;
@@ -11,10 +11,17 @@
   @include media-q($tablet-wide) {
     width: 100%;
     height: 150px;
-    background-color: rgba(171, 183, 183, 0.6);
+    background-color: transparent;
     margin-bottom: 10px;
     padding: 0px 0px;
     z-index: 1000;
+    transition: 0.4s ease-in all;
+    box-shadow: none;
+    &:hover {
+      box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.2),
+        1px 1px 5px rgba(255, 255, 255, 0.6);
+      background-color: rgba(255, 255, 255, 0.2);
+    }
   }
 
   &__container {
@@ -34,14 +41,17 @@
     }
   }
   &__title {
-    @include font($secondary-font, 45px, 600, $dark);
+    @include font($main-font, 50px, 600, $main-color);
     text-align: center;
-    padding-left: 20px;
-    text-shadow: 0px 0px 4px $dark;
+    padding-left: 0px;
+    margin-right: 0;
+    text-shadow: 0px 0px 15px $white;
     @include media-q($tablet) {
-      @include font($secondary-font, 60px, 600, $white-smoke);
+      @include font($main-font, 60px, 600, $main-color);
       text-align: center;
-      text-shadow: 2px 2px 15px $dark;
+      text-shadow: 0px 0px 15px $white;
+      margin-right: 20px;
+      padding-left: 50px;
     }
   }
   &__search-box {

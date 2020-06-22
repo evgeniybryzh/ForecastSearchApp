@@ -21,14 +21,14 @@
     width: 49%;
     height: 900px;
     z-index: 1;
-    border-radius: 20px 20px 0 0;
+    border-radius: 10px 10px 0 0;
     padding: 0px;
   }
   @include media-q($desktop-wide) {
     width: 49%;
     height: 700px;
     z-index: 1;
-    border-radius: 20px 20px 0 0;
+    border-radius: 10px 10px 0 0;
     padding: 0px;
   }
 }

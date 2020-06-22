@@ -11,11 +11,9 @@
   &__info {
     flex-basis: 49%;
     height: auto;
-    background-color: rgba(171, 183, 183, 0.8);
     @include media-q($desktop-wide) {
       flex-basis: 49%;
       height: 700px;
-      background-color: rgba(171, 183, 183, 0.8);
     }
   }
 }
