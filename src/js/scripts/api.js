@@ -1,8 +1,17 @@
 "use strict";
-import { showWeatherInfo, showWeatherHourlyInfo } from "./render";
-import { getGeo } from "./geo";
-import { useMap } from "./map";
-import { changeBGByWeather } from "./bg";
+import {
+  showWeatherInfo,
+  showWeatherHourlyInfo
+} from "./render";
+import {
+  getGeo
+} from "./geo";
+import {
+  useMap
+} from "./map";
+import {
+  changeBGByWeather
+} from "./bg";
 export function getResponse() {
   const API_KEY = "d6e7fd6926ec77363ffce0e10bfe83b3";
   const BASE_URL = `https://api.openweathermap.org/data/2.5/weather?q=`;
@@ -65,12 +74,22 @@ export function getResponse() {
       getResponse($input.value.toLowerCase());
       getResponseForDays($input.value.toLowerCase());
     }
-    const $autoCompleteName = document.querySelectorAll(".ap-name");
+    const $autoCompleteName = document.querySelectorAll(".ap-suggestion");
+    console.log($autoCompleteName[1].children)
 
-    if ($autoCompleteName) {
-      getResponse($input.value.toLowerCase());
-      getResponseForDays($input.value.toLowerCase());
+    for (let i = 0; i < $autoCompleteName.length; i++) {
+      if (event.target == $autoCompleteName[i]) {
+        getResponse($input.value.toLowerCase());
+        getResponseForDays($input.value.toLowerCase());
+      }
+      for (let f = 0; f < $autoCompleteName[1].children.length; f++) {
+        if (event.target == $autoCompleteName[i].children[f]) {
+          getResponse($input.value.toLowerCase());
+          getResponseForDays($input.value.toLowerCase());
+        }
+      }
     }
+
   });
   document.addEventListener("keypress", (event) => {
     if (event.target == $input && event.code == "Enter") {
