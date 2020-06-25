@@ -1,8 +1,16 @@
 "use strict";
-import { showWeatherInfo } from "./render";
-import { showWeatherHourlyInfo } from "./render";
-import { useMap } from "./map";
-import { changeBGByWeather } from "./bg";
+import {
+  showWeatherInfo
+} from "./render";
+import {
+  showWeatherHourlyInfo
+} from "./render";
+import {
+  useMap
+} from "./map";
+import {
+  changeBGByWeather
+} from "./bg";
 export const getGeo = () => {
   function success(pos) {
     const crd = pos.coords;
@@ -16,11 +24,16 @@ export const getGeo = () => {
           showWeatherInfo(data);
           let coords = [data.coord.lat, data.coord.lon];
           useMap(coords);
-          changeBGByWeather(data);
+          if (window.matchMedia("(min-width: 768px)").matches) {
+            changeBGByWeather(data);
+          } else {
+            return true;
+          }
+
         })
         .catch((err) => {
           console.log(err);
-          $cityName.innerText = `Write City name to watch the forecast`;
+
         });
     };
     const getResponseForDays = () => {

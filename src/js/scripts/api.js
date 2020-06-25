@@ -74,21 +74,22 @@ export function getResponse() {
       getResponse($input.value.toLowerCase());
       getResponseForDays($input.value.toLowerCase());
     }
-    const $autoCompleteName = document.querySelectorAll(".ap-suggestion");
-    console.log($autoCompleteName[1].children)
 
-    for (let i = 0; i < $autoCompleteName.length; i++) {
-      if (event.target == $autoCompleteName[i]) {
-        getResponse($input.value.toLowerCase());
-        getResponseForDays($input.value.toLowerCase());
-      }
-      for (let f = 0; f < $autoCompleteName[1].children.length; f++) {
-        if (event.target == $autoCompleteName[i].children[f]) {
-          getResponse($input.value.toLowerCase());
-          getResponseForDays($input.value.toLowerCase());
-        }
-      }
-    }
+    // const $autoCompleteName = document.querySelectorAll(".ap-suggestion");
+    // console.log($autoCompleteName[1].children)
+
+    // for (let i = 0; i < $autoCompleteName.length; i++) {
+    //   if (event.target == $autoCompleteName[i]) {
+    //     getResponse($input.value.toLowerCase());
+    //     getResponseForDays($input.value.toLowerCase());
+    //   }
+    // for (let f = 0; f < $autoCompleteName[1].children.length; f++) {
+    //   if (event.target == $autoCompleteName[i].children[f]) {
+    //     getResponse($input.value.toLowerCase());
+    //     getResponseForDays($input.value.toLowerCase());
+    //   }
+    // }
+    // }
 
   });
   document.addEventListener("keypress", (event) => {
