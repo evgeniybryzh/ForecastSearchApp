@@ -17,6 +17,7 @@
     z-index: 1000;
     transition: 0.4s ease-in all;
     box-shadow: none;
+
     &:hover {
       box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.2),
         1px 1px 5px rgba(255, 255, 255, 0.6);
@@ -29,23 +30,27 @@
     height: 100%;
     z-index: 1000;
     position: relative;
+
     @include media-q($tablet) {
       @include flex-main(column, center, flex-start);
       height: 100%;
       position: relative;
     }
+
     @include media-q($tablet-wide) {
       @include flex-main(row, center, center);
       height: 100%;
       position: relative;
     }
   }
+
   &__title {
-    @include font($main-font, 50px, 600, $main-color);
+    @include font($main-font, 50px, 800, $white);
     text-align: center;
     padding-left: 0px;
     margin-right: 0;
-    text-shadow: 0px 0px 15px $white;
+    text-shadow: 0px 0px 10px $footer-black;
+
     @include media-q($tablet) {
       @include font($main-font, 60px, 600, $main-color);
       text-align: center;
@@ -54,15 +59,19 @@
       padding-left: 50px;
     }
   }
+
   &__search-box {
     flex-basis: 50%;
   }
+
   &__burger-wrapper {
     flex-basis: 25%;
     position: relative;
   }
+
   &__button {
     margin-bottom: 10px;
+
     @include media-q($tablet-wide) {
       margin-bottom: 0px;
     }

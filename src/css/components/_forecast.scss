@@ -1,8 +1,10 @@
 .forecast {
   height: auto;
+
   @include media-q($tablet-wide) {
     height: 100vh;
   }
+
   &__video {
     position: fixed;
     top: 0;
@@ -12,11 +14,11 @@
     min-height: 100%;
     z-index: -1000;
   }
+
   &__bg {
-    background-image: url(../images/mbg6.jpg);
-    background-position: left;
-    background-size: cover;
-    background-repeat: no-repeat;
+
+    background-color: $mobile-title-color;
+
     z-index: -1000;
   }
 }

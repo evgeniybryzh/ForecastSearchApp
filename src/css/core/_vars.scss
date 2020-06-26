@@ -14,10 +14,12 @@ $icon-color: #a174b4;
 $icon-hover-color: #bba1cd;
 $cover-top: rgba(154, 105, 175, 0.2);
 $cover-bottom: rgba(154, 105, 175, 0.9);
-$search-button-bg-color: #e76f51;
-$search-button-bg-hover-color: #f4a261;
-$main-color: #f4a261;
-$secondary-color: #e76f51;
+$search-button-bg-color: #FF5630;
+$search-button-bg-hover-color:#FFAB00;
+$main-color:#FFAB00;
+$secondary-color: #FF5630;
+$mobile-title-color:#253858;
+$mobile-bg-color:#172B4D;
 // Bacground colors
 
 // Button colors
@@ -26,8 +28,10 @@ $secondary-color: #e76f51;
 
 // Border colors
 
-$main-font: "Montserrat", sans-serif;
-$secondary-font: "Lato", sans-serif;
+$main-font: "Montserrat",
+sans-serif;
+$secondary-font: "Lato",
+sans-serif;
 
 $logo-fs: calcRem(50px);
 
