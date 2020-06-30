@@ -1,3 +1,6 @@
+import {
+  getResponse
+} from "./api";
 export const useAutocomplete = () => {
   const placesOptions = {
     appId: "pl58FNVF6UP2",
@@ -13,6 +16,7 @@ export const useAutocomplete = () => {
     type: "city",
     aroundLatLngViaIP: false,
   };
-
   const placesInstance = places(placesOptions).configure(reconfigurableOptions);
+
+
 };

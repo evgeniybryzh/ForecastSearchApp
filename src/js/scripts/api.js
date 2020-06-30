@@ -25,6 +25,7 @@ export function getResponse() {
   const $searchButton = document.getElementById("button");
   const $searchIcon = document.getElementById("search-icon");
 
+
   const getSearchUrl = (city) => {
     return `${BASE_URL}${city}&units=celsius&appid=${API_KEY}`;
   };
@@ -75,24 +76,23 @@ export function getResponse() {
       getResponseForDays($input.value.toLowerCase());
     }
 
-    // const $autoCompleteName = document.querySelectorAll(".ap-suggestion");
-    // console.log($autoCompleteName[1].children)
+    const $autoCompleteName = document.querySelectorAll(".ap-suggestion");
+    for (let i = 0; i < $autoCompleteName.length; i++) {
+      if (event.target === $autoCompleteName[i]) {
+        getResponse($input.value.toLowerCase());
+        getResponseForDays($input.value.toLowerCase());
+      }
+      for (let f = 0; f < $autoCompleteName[1].children.length; f++) {
+        if (event.target === $autoCompleteName[i].children[f]) {
+          getResponse($input.value.toLowerCase());
+          getResponseForDays($input.value.toLowerCase());
+        }
 
-    // for (let i = 0; i < $autoCompleteName.length; i++) {
-    //   if (event.target == $autoCompleteName[i]) {
-    //     getResponse($input.value.toLowerCase());
-    //     getResponseForDays($input.value.toLowerCase());
-    //   }
-    // for (let f = 0; f < $autoCompleteName[1].children.length; f++) {
-    //   if (event.target == $autoCompleteName[i].children[f]) {
-    //     getResponse($input.value.toLowerCase());
-    //     getResponseForDays($input.value.toLowerCase());
-    //   }
-    // }
-    // }
+      }
+    }
 
   });
-  document.addEventListener("keypress", (event) => {
+  document.addEventListener("keyup", (event) => {
     if (event.target == $input && event.code == "Enter") {
       getResponse($input.value.toLowerCase());
       getResponseForDays($input.value.toLowerCase());

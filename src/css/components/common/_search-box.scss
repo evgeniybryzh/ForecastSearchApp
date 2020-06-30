@@ -1,6 +1,7 @@
 .search-box {
   @include flex-main(row, flex-start, center);
   margin-right: 0px;
+
   @include media-q($phone-wide) {
     @include flex-main(row, flex-start, center);
     margin-right: 150px;
@@ -15,6 +16,7 @@
     padding-left: 10px;
     border: 1px solid $grey;
     border-right: none;
+
     @include media-q($phablet) {
       height: 80px;
       @include font($main-font, 40px, 500, $dark);
@@ -24,6 +26,7 @@
       border: 1px solid $grey;
       border-right: none;
     }
+
     @include media-q($tablet-small) {
       flex-basis: 80%;
       height: 80px;
@@ -34,12 +37,14 @@
       border: 1px solid $grey;
       border-right: none;
     }
+
     &::placeholder {
       @include font($secondary-font, 30px, 300, $light);
       text-align: center;
       text-shadow: 2px 1px 2px $dark;
     }
   }
+
   &__icon-wrapper {
     width: 80px;
     height: 80px;
@@ -50,13 +55,20 @@
     transition: 0.3s linear all;
     border: 1px solid $grey;
     border-left: 1px solid white;
+
     &:hover {
       border-left: 1px solid $grey;
     }
   }
+
   &__icon {
     width: 50px;
     height: 50px;
     margin-left: 5px;
   }
+}
+
+.ap-suggestion-icon {
+  display: none;
+
 }
