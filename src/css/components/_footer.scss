@@ -15,11 +15,10 @@
         box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.2),
             1px 1px 5px rgba(255, 255, 255, 0.6);
         background-color: rgba(171, 183, 183, 0.4);
-
     }
 
     &__container {
-        @include flex-main(column, flex-start, center)
+        @include flex-main(column, flex-start, center);
     }
 
     &__title {
@@ -28,8 +27,8 @@
         margin-bottom: 20px;
         text-align: center;
 
-        @include media-q ($tablet) {
-            @include font($main-font, 50px, 600, $white);
+        @include media-q($tablet) {
+            @include font($main-font, 40px, 600, $white);
             text-shadow: 0px 0px 10px $footer-black;
             margin-bottom: 20px;
             text-align: center;
@@ -40,14 +39,13 @@
         @include font($main-font, 50px, 600, $main-color);
         text-decoration: underline;
         text-decoration-color: $white;
-
     }
 
     &__info {
         width: 100%;
         @include flex-main(column, space-between, flex-start);
 
-        @include media-q ($tablet) {
+        @include media-q($tablet) {
             width: 100%;
             @include flex-main(row, space-between, flex-start);
         }
@@ -60,7 +58,7 @@
 
         @include media-q($tablet) {
             flex-basis: 50%;
-            @include flex-main(column, space-between, flex-start);
+            @include flex-main(column, space-between, center);
             margin-bottom: 0px;
         }
     }
@@ -74,7 +72,7 @@
         @include media-q($phone-wide) {
             height: 100%;
             flex-basis: 50%;
-            @include flex-main(column, center, flex-end);
+            @include flex-main(column, center, center);
             margin-bottom: 0px;
         }
     }
@@ -98,7 +96,7 @@
             flex-wrap: nowrap;
         }
 
-        @include media-q($tablet) {
+        @include media-q($tablet-wide) {
             width: 100%;
             @include flex-main(row, space-between, center);
             flex-wrap: nowrap;
@@ -113,7 +111,6 @@
 
         &:hover {
             border-bottom: 3px solid $main-color;
-
         }
     }
 
@@ -121,8 +118,6 @@
         width: 60px;
         height: 60px;
         margin-bottom: 10px;
-
-
     }
 
     &__tech-name {
@@ -130,7 +125,7 @@
     }
 
     &__tech-link {
-        @include flex-main(column, center, center)
+        @include flex-main(column, center, center);
     }
 
     &__contacts-title {
@@ -149,17 +144,18 @@
     }
 
     &__contacts-list {
-        @include flex-main(row, space-between, center);
+        @include flex-main(row, center, center);
+        flex-wrap: wrap;
 
-        @include media-q($phone-wide) {
-            @include flex-main(row, flex-end, center)
+        @include media-q($tablet-wide) {
+            @include flex-main(row, flex-end, center);
         }
     }
 
     &__contacts-item:not(:last-of-type) {
-        margin-right: 00px;
+        margin-right: 0px;
 
-        @include media-q($phone) {
+        @include media-q($tablet-lb) {
             margin-right: 65px;
         }
     }
