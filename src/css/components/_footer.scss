@@ -1,0 +1,175 @@
+.footer {
+    min-height: 300px;
+    width: 100%;
+    background-color: rgba(171, 183, 183, 0.4);
+    padding: 0px 20px;
+    z-index: 1000;
+    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.2),
+        1px 1px 5px rgba(255, 255, 255, 0.6);
+
+    @include media-q($tablet-wide) {
+        width: 100%;
+        min-height: 250px;
+        padding: 0px 0px;
+        z-index: 1000;
+        box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.2),
+            1px 1px 5px rgba(255, 255, 255, 0.6);
+        background-color: rgba(171, 183, 183, 0.4);
+
+    }
+
+    &__container {
+        @include flex-main(column, flex-start, center)
+    }
+
+    &__title {
+        @include font($main-font, 40px, 600, $white);
+        text-shadow: 0px 0px 10px $footer-black;
+        margin-bottom: 20px;
+        text-align: center;
+
+        @include media-q ($tablet) {
+            @include font($main-font, 50px, 600, $white);
+            text-shadow: 0px 0px 10px $footer-black;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    }
+
+    &__red-word {
+        @include font($main-font, 50px, 600, $main-color);
+        text-decoration: underline;
+
+    }
+
+    &__info {
+        width: 100%;
+        @include flex-main(column, space-between, flex-start);
+
+        @include media-q ($tablet) {
+            width: 100%;
+            @include flex-main(row, space-between, flex-start);
+        }
+    }
+
+    &__tech-box {
+        flex-basis: 50%;
+
+        @include flex-main(column, space-between, center) @include media-q($tablet) {
+            flex-basis: 50%;
+            @include flex-main(column, space-between, flex-start)
+        }
+    }
+
+    &__contacts {
+        height: 100%;
+        flex-basis: 50%;
+        @include flex-main(column, center, flex-end)
+    }
+
+    &__tech-title {
+        @include font($main-font, 30px, 600, $main-color);
+        margin-bottom: 20px;
+        text-decoration: underline;
+        text-align: center;
+        text-shadow: 0px 0px 10px $footer-black;
+    }
+
+    &__tech-list {
+        width: 100%;
+        @include flex-main(row, space-around, center);
+        flex-wrap: wrap;
+
+        @include media-q($phone) {
+            width: 100%;
+            @include flex-main(row, space-between, flex-start);
+            flex-wrap: nowrap;
+        }
+
+        @include media-q($tablet) {
+            width: 100%;
+            @include flex-main(row, space-between, center);
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__tech-item {
+        @include flex-main(column, flex-start, center);
+        border-bottom: 3px solid transparent;
+        transition: 0.4s ease all;
+        text-align: center;
+
+        &:hover {
+            border-bottom: 3px solid $main-color;
+
+        }
+    }
+
+    &__tech-img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 10px;
+
+
+    }
+
+    &__tech-name {
+        @include font($main-font, 17px, 600, $white);
+    }
+
+    &__tech-link {
+        @include flex-main(column, center, center)
+    }
+
+    &__contacts-title {
+        @include font($main-font, 30px, 600, $main-color);
+        margin-bottom: 20px;
+        text-decoration: underline;
+        text-align: center;
+        text-shadow: 0px 0px 10px $footer-black;
+
+        @include media-q($phone) {
+            @include font($main-font, 30px, 600, $main-color);
+            margin-bottom: 20px;
+            text-decoration: underline;
+            text-align: center;
+        }
+    }
+
+    &__contacts-list {
+        @include flex-main(row, center, center);
+
+        @include media-q($phone) {
+            @include flex-main(row, flex-end, center)
+        }
+    }
+
+    &__contacts-item:not(:last-of-type) {
+        margin-right: 20px;
+
+        @include media-q($phone) {
+            margin-right: 65px;
+        }
+    }
+
+    &__contacts-item:last-of-type {
+        margin-right: 20px;
+
+        @include media-q($phone) {
+            margin-right: 0px;
+        }
+    }
+
+    &__contacts-img {
+        width: 70px;
+        height: 70px;
+        border: 3px solid transparent;
+        border-radius: 50%;
+        transition: 0.4s ease all;
+
+        &:hover {
+            border: 3px solid $main-color;
+            border-radius: 50%;
+        }
+    }
+}

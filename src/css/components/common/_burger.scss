@@ -5,6 +5,7 @@
   right: 20px;
   top: 16%;
   display: none;
+
   @include media-q($phablet) {
     width: 60px;
     height: 35px;
@@ -13,6 +14,7 @@
     top: 50%;
     display: none;
   }
+
   @include media-q($tablet) {
     width: 80px;
     height: 60px;
@@ -21,13 +23,16 @@
     top: 41%;
     display: block;
   }
+
   @include media-q($tablet-wide) {
     width: 50px;
     height: 35px;
     position: relative;
     display: block;
   }
+
   cursor: pointer;
+
   &__item:nth-child(1) {
     position: absolute;
     top: 0;
@@ -35,6 +40,7 @@
     height: 6px;
     border: 1px solid black;
     background-color: $main-color;
+
     @include media-q($tablet-wide) {
       position: absolute;
       top: 0;
@@ -52,6 +58,7 @@
     height: 6px;
     border: 1px solid black;
     background-color: $main-color;
+
     @include media-q($tablet-wide) {
       position: absolute;
       top: 50%;
@@ -61,6 +68,7 @@
       background-color: $main-color;
     }
   }
+
   &__item:nth-child(3) {
     position: absolute;
     top: 100%;
@@ -68,6 +76,7 @@
     height: 6px;
     border: 1px solid black;
     background-color: $main-color;
+
     @include media-q($tablet-wide) {
       position: absolute;
       top: 100%;
@@ -77,6 +86,7 @@
       background-color: $main-color;
     }
   }
+
   &__menu {
     width: 200px;
     @include flex-main(column, flex-start, center);
@@ -88,9 +98,10 @@
     z-index: 200;
     overflow: hidden;
   }
+
   &__menu-title {
     @include flex-main;
-    flex-basis: 20%;
+    flex-basis: 30%;
     box-shadow: inset 2px 2px 15px rgba(154, 147, 140, 0.2),
       1px 1px 15px rgba(255, 255, 255, 0.6);
     background-color: $main-color;
@@ -98,6 +109,7 @@
     border-bottom: 2px dashed $white;
     text-align: center;
   }
+
   &__menu-list {
     width: 100%;
     @include flex-main(row, flex-start, center);
@@ -122,26 +134,39 @@
     opacity: 0.9;
     @include font($main-font, 30px, 600, $white);
     text-shadow: 2px 2px 15px $dark;
+
     &:hover {
       border-right: 2px solid $white;
       border-left: 2px solid $white;
       opacity: 1;
       background-color: rgba(171, 183, 183, 1);
+
+      &:nth-child(2n) {
+        transform: translate(15px);
+      }
+
+      &:nth-child(2n-1) {
+        transform: translate(-15px);
+      }
     }
+
     @include media-q($tablet-wide) {
       background-color: rgba(171, 183, 183, 0.5);
     }
   }
 }
+
 .pushed {
   transition: 0.2s ease all;
 
   &:nth-child(1) {
     width: 100%;
   }
+
   &:nth-child(2) {
     width: 75%;
   }
+
   &:nth-child(3) {
     width: 50%;
   }

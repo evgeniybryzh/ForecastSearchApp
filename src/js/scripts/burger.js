@@ -12,12 +12,15 @@ export function useBurgerMenu() {
 
   let count = 90;
   let heightCounter = 50;
+
   function changeVisibilityTohidden() {
     $burgerMenu.style.display = "none";
   }
+
   function changeVisibilityToVisible() {
     $burgerMenu.style.display = "flex";
   }
+
   function returnDirection() {
     topCounter = -40;
     heightCounter = 50;
@@ -36,7 +39,7 @@ export function useBurgerMenu() {
 
   function animateMenuBack() {
     moveTop();
-    setTimeout(changeVisibilityTohidden, 50);
+    setTimeout(changeVisibilityTohidden, 100);
     setTimeout(returnDirection, 100);
   }
 
@@ -44,7 +47,7 @@ export function useBurgerMenu() {
     setTimeout(changeVisibilityToVisible, 60);
     if (heightCounter == 500) return true;
     if (topCounter < 90) {
-      $burgerMenu.style.top = `${(topCounter += 5)}px`;
+      $burgerMenu.style.top = `${(topCounter += 30)}px`;
     }
     if (heightCounter < 560) {
       $burgerMenu.style.height = `${(heightCounter += 9)}px`;
@@ -57,6 +60,7 @@ export function useBurgerMenu() {
     $secondStripe.classList.remove("pushed");
     $thirdStripe.classList.remove("pushed");
   }
+
   function addStripeChanges() {
     $firstStripe.classList.add("pushed");
     $secondStripe.classList.add("pushed");

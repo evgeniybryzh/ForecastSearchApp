@@ -3,6 +3,7 @@
   border-radius: 10px 10px 0 0;
   z-index: 1;
   width: 100%;
+
   &__details {
     width: 100%;
     flex-basis: 50%;
@@ -15,6 +16,7 @@
     border-radius: 10px 10px 0 0;
     box-shadow: 0 0 0 2px white, 0 0 0 4px rgba(154, 147, 140, 0.5);
     background-color: rgba(255, 255, 255, 0.2);
+
     @include media-q($tablet) {
       width: 100%;
       flex-basis: 35%;
@@ -27,27 +29,33 @@
       background-color: rgba(255, 255, 255, 0.2);
     }
   }
+
   &__title-box {
     width: 100%;
     flex-basis: 50%;
   }
+
   &__weather-details {
     @include flex-main(column, space-between, center);
     flex-wrap: nowrap;
     width: 100%;
+
     @include media-q($phone-wide) {
       @include flex-main(row, space-between, center);
       flex-wrap: nowrap;
       width: 100%;
     }
   }
+
   &__temperature-box {
     @include flex-main(column, flex-start, center);
     flex-basis: 60%;
+
     @include media-q($phone-wide) {
       @include flex-main(column, flex-start, center);
       flex-basis: 33.3%;
     }
+
     @include media-q($desktop-wide) {
       @include flex-main(row, flex-start, center);
       flex-basis: 33.3%;
@@ -58,35 +66,42 @@
     @include flex-main(column, center, center);
     flex-wrap: wrap;
     flex-basis: 100%;
+
     @include media-q($phone-wide) {
       @include flex-main(row, space-between, center);
       flex-wrap: wrap;
       flex-basis: 66.6%;
     }
   }
+
   &__values {
     width: 100%;
     @include flex-main(row, flex-start, center);
     padding: 5px;
+
     @include media-q($tablet) {
       flex-basis: 50%;
       @include flex-main(row, flex-start, center);
       padding: 5px;
     }
   }
+
   &__name {
     @include font($secondary-font, 25px, 500, $white);
     text-shadow: 0px 0px 11px $footer-black;
   }
+
   &__main-title {
     @include font($main-font, 40px, 500, $white);
     text-shadow: 0px 0px 11px $footer-black;
+
     @include media-q($tablet-wide) {
       @include font($main-font, 35px, 500, $white);
       font-size: 3.5vw;
       line-height: 60px;
     }
   }
+
   &__temperature {
     @include font($secondary-font, 120px, 500, $white);
 
@@ -95,32 +110,39 @@
       text-shadow: 0px 5px 20px $footer-black;
       font-size: 8vw;
     }
+
     @include media-q($tablet-wide) {
       @include font($secondary-font, 80px, 500, $white);
       font-size: 4vw;
     }
   }
+
   &__weather-icon {
     margin-right: 10px;
     width: 50px;
     height: 50px;
+
     @include media-q($tablet-wide) {
       margin-right: 10px;
       width: 35px;
       height: 25px;
     }
   }
+
   &__big-weather-icon {
     width: 88px;
     height: 90px;
   }
+
   &__weather-kind {
     @include font($secondary-font, 35px, 600, $white);
+
     @include media-q($tablet-wide) {
       @include font($secondary-font, 20px, 600, $white);
       text-shadow: 0px 5px 20px $footer-black;
     }
   }
+
   &__title {
     width: 95%;
     flex-basis: 5%;
@@ -128,6 +150,7 @@
     margin-bottom: 15px;
     text-align: center;
     text-shadow: 0px 0px 6px $dark;
+
     @include media-q($tablet-wide) {
       width: 95%;
       flex-basis: 5%;
@@ -138,19 +161,22 @@
       margin-bottom: 10px;
     }
   }
+
   &__hourly-info-box {
     width: 100%;
     flex-basis: 80%;
     @include flex-main(column, space-between, center);
   }
+
   &__forecast-box {
     @include flex-main(column, space-between, center);
   }
+
   &__hourly-info {
     width: 100%;
     flex-basis: 20%;
     margin-bottom: 10px;
-    @include flex-main(column, center, center);
+    @include flex-main(column-reverse, center, center);
     cursor: context-menu;
     box-shadow: 0 0 0 2px white, 0 0 0 4px rgba(154, 147, 140, 0.5);
     background-color: rgba(255, 255, 255, 0.2);
@@ -169,80 +195,102 @@
       padding: 5px 15px 5px 15px;
     }
   }
+
   &__date {
     flex-basis: 11%;
     margin-bottom: 20px;
+    order: 1;
+
     @include media-q($tablet-wide) {
       flex-basis: 11%;
       margin-bottom: 0px;
+      order: 0;
     }
   }
+
   &__hourly-weather-box {
     flex-basis: 70%;
     @include flex-main(row, space-between, center);
     flex-wrap: wrap;
   }
+
   &__hourly-temperature-box {
     flex-basis: 29%;
-    @include flex-main(column, center, center);
+    @include flex-main(row, space-between, center);
+
+
     @include media-q($tablet-wide) {
       flex-basis: 19%;
       @include flex-main;
     }
   }
+
   &__hourly-values {
     flex-basis: 100%;
 
     @include flex-main(row, flex-start, center);
+
     @include media-q($tablet) {
       flex-basis: 50%;
       @include flex-main(row, flex-start, center);
     }
+
     &:nth-child(1),
     &:nth-child(2) {
       margin-bottom: 5px;
     }
   }
+
   &__hourly-big-weather-icon {
     width: 100px;
     height: 100px;
+
     @include media-q($phone-wide) {
       width: 200px;
       height: 200px;
     }
+
     @include media-q($tablet-wide) {
       width: 50px;
       height: 50px;
     }
   }
+
   &__date-time {
     @include font($secondary-font, 25px, 600, $white);
 
     @include media-q($phone-wide) {
       @include font($secondary-font, 55px, 600, $white);
     }
+
     @include media-q($tablet-wide) {
       @include font($secondary-font, 15px, 600, $white);
       text-shadow: 0px 0px 11px $footer-black;
     }
   }
+
   &__hourly-weather-kind {
-    @include font($secondary-font, 15px, 600, $white);
+    @include font($secondary-font, 22px, 600, $white);
+
     @include media-q($phone-wide) {
       @include font($secondary-font, 45px, 600, $white);
     }
+
     @include media-q($tablet-wide) {
       @include font($secondary-font, 15px, 600, $white);
       text-shadow: 0px 0px 11px $footer-black;
     }
   }
+
   &__hourly-temperature {
     padding-left: 50px;
-    @include font($secondary-font, 60px, 600, $white);
+    @include font($secondary-font, 70px, 600, $white);
+
     @include media-q($phone-wide) {
       @include font($secondary-font, 120px, 600, $white);
       padding-left: 100px;
     }
+
     @include media-q($tablet-wide) {
       @include font($secondary-font, 30px, 600, $white);
       text-shadow: 0px 0px 11px $footer-black;
