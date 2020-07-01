@@ -39,6 +39,7 @@
     &__red-word {
         @include font($main-font, 50px, 600, $main-color);
         text-decoration: underline;
+        text-decoration-color: $white;
 
     }
 
@@ -54,17 +55,28 @@
 
     &__tech-box {
         flex-basis: 50%;
+        margin-bottom: 40px;
+        @include flex-main(column, space-between, center);
 
-        @include flex-main(column, space-between, center) @include media-q($tablet) {
+        @include media-q($tablet) {
             flex-basis: 50%;
-            @include flex-main(column, space-between, flex-start)
+            @include flex-main(column, space-between, flex-start);
+            margin-bottom: 0px;
         }
     }
 
     &__contacts {
         height: 100%;
         flex-basis: 50%;
-        @include flex-main(column, center, flex-end)
+        margin-bottom: 20px;
+        @include flex-main(column, center, space-between);
+
+        @include media-q($phone-wide) {
+            height: 100%;
+            flex-basis: 50%;
+            @include flex-main(column, center, flex-end);
+            margin-bottom: 0px;
+        }
     }
 
     &__tech-title {
@@ -137,15 +149,15 @@
     }
 
     &__contacts-list {
-        @include flex-main(row, center, center);
+        @include flex-main(row, space-between, center);
 
-        @include media-q($phone) {
+        @include media-q($phone-wide) {
             @include flex-main(row, flex-end, center)
         }
     }
 
     &__contacts-item:not(:last-of-type) {
-        margin-right: 20px;
+        margin-right: 00px;
 
         @include media-q($phone) {
             margin-right: 65px;
@@ -153,7 +165,7 @@
     }
 
     &__contacts-item:last-of-type {
-        margin-right: 20px;
+        margin-right: 0px;
 
         @include media-q($phone) {
             margin-right: 0px;

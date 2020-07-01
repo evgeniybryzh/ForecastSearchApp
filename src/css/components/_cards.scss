@@ -2,15 +2,18 @@
   width: 100%;
   @include flex-main(column, space-between, center);
   padding: 10px;
+
   @include media-q($tablet-wide) {
     width: 100%;
     padding: 0px;
     @include flex-main(row, space-between, center);
+    margin-bottom: 50px;
   }
 
   &__info {
     flex-basis: 49%;
     height: auto;
+
     @include media-q($desktop-wide) {
       flex-basis: 49%;
       height: 700px;
