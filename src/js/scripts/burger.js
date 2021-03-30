@@ -8,51 +8,8 @@ export function useBurgerMenu() {
   const $thirdStripe = document.getElementById("third-stripe");
   const $burgerMenuListItems = document.getElementById("menu-list");
 
-  let topCounter = -40;
-
-  let count = 90;
-  let heightCounter = 50;
-
-  function changeVisibilityTohidden() {
-    $burgerMenu.style.display = "none";
-  }
-
-  function changeVisibilityToVisible() {
-    $burgerMenu.style.display = "flex";
-  }
-
-  function returnDirection() {
-    topCounter = -40;
-    heightCounter = 50;
-    $burgerMenu.style.top = `${topCounter}px`;
-    $burgerMenu.style.height = `${heightCounter}px`;
-  }
-
-  function moveTop() {
-    if (count == -40) {
-      return (count = 90);
-    } else {
-      $burgerMenu.style.top = `${(count -= 5)}px`;
-    }
-    setTimeout(moveTop, 1);
-  }
-
-  function animateMenuBack() {
-    moveTop();
-    setTimeout(changeVisibilityTohidden, 100);
-    setTimeout(returnDirection, 100);
-  }
-
-  function animateMenuForward() {
-    setTimeout(changeVisibilityToVisible, 60);
-    if (heightCounter == 500) return true;
-    if (topCounter < 90) {
-      $burgerMenu.style.top = `${(topCounter += 30)}px`;
-    }
-    if (heightCounter < 560) {
-      $burgerMenu.style.height = `${(heightCounter += 9)}px`;
-    }
-    setTimeout(animateMenuForward, 1);
+  function menuToggle() {
+    $burgerMenu.classList.toggle("burger__menu--moved");
   }
 
   function removeStripesChanges() {
@@ -75,12 +32,11 @@ export function useBurgerMenu() {
         event.target === $burgerStripes[1] ||
         event.target === $burgerStripes[2]
       ) {
+        menuToggle();
         if ($firstStripe.classList[1] == "pushed") {
           removeStripesChanges();
-          animateMenuBack();
         } else {
           addStripeChanges();
-          animateMenuForward();
         }
       }
 
@@ -90,11 +46,9 @@ export function useBurgerMenu() {
         event.target === $burgerMenuListItems.children[2] ||
         event.target === $burgerMenuListItems.children[3]
       ) {
-        animateMenuBack();
         removeStripesChanges();
       }
     });
   };
   useBurger();
-
 }

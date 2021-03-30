@@ -2,11 +2,11 @@
   width: 100%;
   @include flex-main(column, space-between, center);
   padding: 10px;
-
+  min-height: calc(100vh - 50px);
   @include media-q($tablet-wide) {
     width: 100%;
-    padding: 0px;
-    @include flex-main(row, space-between, center);
+    padding: 10px;
+    @include flex-main(row, space-between, flex-start);
     margin-bottom: 50px;
   }
 

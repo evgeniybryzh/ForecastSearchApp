@@ -92,11 +92,12 @@
   }
 
   &__main-title {
-    @include font($main-font, 40px, 500, $white);
+    @include font($main-font, 40px, 500, $main-color);
     text-shadow: 0px 0px 11px $footer-black;
 
     @include media-q($tablet-wide) {
-      @include font($main-font, 35px, 500, $white);
+      @include font($main-font, 35px, 500, $main-color);
+      color: $main-color !important;
       font-size: 3.5vw;
       line-height: 60px;
     }
@@ -121,11 +122,13 @@
     margin-right: 10px;
     width: 50px;
     height: 50px;
-
+    background-color: $secondary-color;
+    border-radius: 10px;
     @include media-q($tablet-wide) {
       margin-right: 10px;
-      width: 35px;
-      height: 25px;
+      width: 40px;
+      height: 30px;
+      object-fit: contain;
     }
   }
 
@@ -177,7 +180,7 @@
     flex-basis: 20%;
     margin-bottom: 10px;
     @include flex-main(column-reverse, center, center);
-    cursor: context-menu;
+    cursor: auto;
     box-shadow: 0 0 0 2px white, 0 0 0 4px rgba(154, 147, 140, 0.5);
     background-color: rgba(255, 255, 255, 0.2);
     padding: 5px 15px 5px 15px;
@@ -217,7 +220,6 @@
   &__hourly-temperature-box {
     flex-basis: 29%;
     @include flex-main(row, space-between, center);
-
 
     @include media-q($tablet-wide) {
       flex-basis: 19%;

@@ -1,13 +1,13 @@
 .burger {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   position: absolute;
   right: 20px;
   top: 16%;
   display: none;
 
   @include media-q($phablet) {
-    width: 60px;
+    width: 40px;
     height: 35px;
     position: absolute;
     right: 40px;
@@ -16,17 +16,17 @@
   }
 
   @include media-q($tablet) {
-    width: 80px;
-    height: 60px;
+    width: 60px;
+    height: 45px;
     position: absolute;
     right: 50px;
-    top: 41%;
+    top: 67%;
     display: block;
   }
 
   @include media-q($tablet-wide) {
-    width: 50px;
-    height: 35px;
+    width: 40px;
+    height: 25px;
     position: relative;
     display: block;
   }
@@ -88,19 +88,27 @@
   }
 
   &__menu {
-    width: 200px;
+    width: 232px;
+    height: 100vh;
     @include flex-main(column, flex-start, center);
     border-radius: 3px;
-    position: absolute;
-    display: none;
-    right: -50px;
-    top: -40px;
-    z-index: 200;
+    position: fixed;
+    // display: none;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1001;
     overflow: hidden;
+    transition: 0.4s ease all;
+    transform: translateX(250px);
+    &--moved {
+      transform: translateX(0px);
+    }
   }
 
   &__menu-title {
     @include flex-main;
+    width: 100%;
     flex-basis: 30%;
     box-shadow: inset 2px 2px 15px rgba(154, 147, 140, 0.2),
       1px 1px 15px rgba(255, 255, 255, 0.6);
